@@ -14,6 +14,20 @@ export const metadata = {
   title: "MERN Stacked - Exploring the MERN Stack and more",
   description:
     "Buckle up for a head-first dive into the MERN Stack. Join Onah Victor as he shares his knowledge and experiences through insightful articles.",
+  openGraph: {
+    title: "MERN Stacked - Exploring the MERN Stack and more",
+    description:
+      "Buckle up for a head-first dive into the MERN Stack. Join Onah Victor as he shares his knowledge and experiences through insightful articles.",
+  },
+  twitter: {
+    title: "MERN Stacked - Exploring the MERN Stack and more",
+    description:
+      "Buckle up for a head-first dive into the MERN Stack. Join Onah Victor as he shares his knowledge and experiences through insightful articles.",
+  },
+  metadataBase:
+    process.env.NODE_ENV !== "production"
+      ? new URL("https://mern-stacked.onrender.com")
+      : new URL("https://mernstacked.com"),
 };
 
 export default function RootLayout({ children }) {
