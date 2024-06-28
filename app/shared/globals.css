@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-search-cancel-button {
+	-webkit-appearance: none;
+	display: none;
+}
+
+::backdrop {
+	backdrop-filter: blur(5px);
+}
+
+* {
+	scroll-behavior: smooth;
+}
+
+#menu-popover {
+	transform-origin: top right;
+	transition: 0.3s linear transform;
+}
+
+#menu-popover[open] {
+	position: fixed;
+	inset: unset;
+	right: 10px;
+	top: 20px;
+	background-color: transparent;
+	transform: scale(1);
+}
+
+#search-modal[open] {
+	opacity: 1;
+	transform: translateY(0);
+	transition: 0.3s linear all;
+	position: fixed;
+}
+
+.load {
+	animation: load 0.7s linear infinite;
+	width: 25%;
+}
+
+@starting-style {
+	#menu-popover[open] {
+		position: fixed;
+		inset: unset;
+		right: 10px;
+		top: 20px;
+		background-color: transparent;
+		transform: scale(0);
+	}
+
+	#search-modal[open] {
+		opacity: 0;
+		transform: translateY(50px)
+	}
+}
+
+@keyframes load {
+	from {
+		margin-left: 0;
+	}
+	to {
+		margin-left: 100%;
+	}
+}
+
+@layer utilities {
+	.hero {
+		background-image: linear-gradient(
+				to top,
+				hsla(224, 76%, 48%, 0.3),
+				hsla(213, 94%, 68%, 0.3)
+			),
+			url(/images/icons-bg.png);
+	}
+}
