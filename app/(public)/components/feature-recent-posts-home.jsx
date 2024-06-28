@@ -49,7 +49,6 @@ export async function FeaturePosts() {
       </div>
     );
   } catch (error) {
-    console.error(error);
     return (
       <div className="flex justify-center text-center items-center text-sm text-red-600 min-h-[180px] p-4">
         <a
