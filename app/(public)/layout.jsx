@@ -24,10 +24,7 @@ export const metadata = {
     description:
       "Buckle up for a head-first dive into the MERN Stack. Join Onah Victor as he shares his knowledge and experiences through insightful articles.",
   },
-  metadataBase:
-    process.env.NODE_ENV !== "production"
-      ? new URL("https://mern-stacked.onrender.com")
-      : new URL("https://mernstacked.com"),
+  metadataBase: new URL(process.env.METADATA_BASE),
 };
 
 export default function RootLayout({ children }) {
