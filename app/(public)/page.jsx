@@ -1,9 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { CgArrowRight } from "react-icons/cg";
-import getTrendingPosts from "./utils/get-trending-posts";
-
-const posts = await getTrendingPosts();
+import { Suspense } from "react";
+import {
+  RecentPosts,
+  FeaturePosts,
+  PostOptimisticUi,
+} from "./components/feature-recent-posts-home";
 
 export default function Page() {
   return (
@@ -33,74 +36,9 @@ export default function Page() {
                 </p>
               </div>
             </div>
-            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-12 py-12 sm:grid-cols-2 lg:grid-cols-3">
-              <Link
-                href="#"
-                className="grid h-auto w-full items-start justify-start gap-2 rounded-md focus:outline-none"
-                prefetch
-              >
-                <Image
-                  src="https://generated.vusercontent.net/placeholder.svg"
-                  width="550"
-                  height="310"
-                  alt="Featured Article"
-                  className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center w-full"
-                />
-                <div className="space-y-1">
-                  <h3 className="text-lg font-semibold group-hover:underline">
-                    The Future of Web Development
-                  </h3>
-                  <p className="text-muted-foreground line-clamp-2">
-                    Explore the latest trends and technologies shaping the
-                    future of web development.
-                  </p>
-                </div>
-              </Link>
-              <Link
-                href="#"
-                className="grid h-auto w-full items-start justify-start gap-2 rounded-md focus:outline-none"
-                prefetch
-              >
-                <Image
-                  src="https://generated.vusercontent.net/placeholder.svg"
-                  width="550"
-                  height="310"
-                  alt="Featured Article"
-                  className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center w-full"
-                />
-                <div className="space-y-1">
-                  <h3 className="text-lg font-semibold group-hover:underline">
-                    Mastering Responsive Design
-                  </h3>
-                  <p className="text-muted-foreground line-clamp-2">
-                    Learn how to create websites that adapt seamlessly to any
-                    device.
-                  </p>
-                </div>
-              </Link>
-              <Link
-                href="#"
-                className="grid h-auto w-full items-start justify-start gap-2 rounded-md focus:outline-none"
-                prefetch
-              >
-                <Image
-                  src="https://generated.vusercontent.net/placeholder.svg"
-                  width="550"
-                  height="310"
-                  alt="Featured Article"
-                  className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center w-full"
-                />
-                <div className="space-y-1">
-                  <h3 className="text-lg font-semibold group-hover:underline">
-                    The Rise of Headless CMS
-                  </h3>
-                  <p className="text-muted-foreground line-clamp-2">
-                    Discover the benefits of headless content management systems
-                    and how they&lsquo;re transforming the web.
-                  </p>
-                </div>
-              </Link>
-            </div>
+            <Suspense fallback={<PostOptimisticUi />}>
+              <FeaturePosts />
+            </Suspense>
             <div className="max-w-5xl p-4 m-auto flex justify-center">
               <Link
                 href="/blog"
@@ -124,71 +62,9 @@ export default function Page() {
                 </p>
               </div>
             </div>
-            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-12 py-12 sm:grid-cols-2 lg:grid-cols-3">
-              <Link
-                href="#"
-                className="grid h-auto w-full items-start justify-start gap-2 rounded-md focus:outline-none"
-                prefetch
-              >
-                <Image
-                  src="https://generated.vusercontent.net/placeholder.svg"
-                  width="550"
-                  height="310"
-                  alt="Featured Article"
-                  className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center w-full"
-                />
-                <div className="space-y-1">
-                  <h3 className="text-lg font-semibold group-hover:underline">
-                    Unlocking the Power of Serverless Computing
-                  </h3>
-                  <p className="text-xs text-muted-foreground">
-                    Published on May 15, 2023
-                  </p>
-                </div>
-              </Link>
-              <Link
-                href="#"
-                className="grid h-auto w-full items-start justify-start gap-2 rounded-md focus:outline-none"
-                prefetch
-              >
-                <Image
-                  src="https://generated.vusercontent.net/placeholder.svg"
-                  width="550"
-                  height="310"
-                  alt="Featured Article"
-                  className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center w-full"
-                />
-                <div className="space-y-1">
-                  <h3 className="text-lg font-semibold group-hover:underline">
-                    The Future of Artificial Intelligence in Web Development
-                  </h3>
-                  <p className="text-xs text-muted-foreground">
-                    Published on April 28, 2023
-                  </p>
-                </div>
-              </Link>
-              <Link
-                href="#"
-                className="grid h-auto w-full items-start justify-start gap-2 rounded-md focus:outline-none"
-                prefetch
-              >
-                <Image
-                  src="https://generated.vusercontent.net/placeholder.svg"
-                  width="550"
-                  height="310"
-                  alt="Featured Article"
-                  className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center w-full"
-                />
-                <div className="space-y-1">
-                  <h3 className="text-lg font-semibold group-hover:underline">
-                    Mastering the Art of Accessible Web Design
-                  </h3>
-                  <p className="text-xs text-muted-foreground">
-                    Published on April 12, 2023
-                  </p>
-                </div>
-              </Link>
-            </div>
+            <Suspense fallback={<PostOptimisticUi />}>
+              <RecentPosts />
+            </Suspense>
           </div>
           <div className="max-w-5xl p-4 m-auto flex justify-center">
             <Link

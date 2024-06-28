@@ -24,7 +24,7 @@ export const metadata = {
     description:
       "Buckle up for a head-first dive into the MERN Stack. Join Onah Victor as he shares his knowledge and experiences through insightful articles.",
   },
-  metadataBase: new URL(process.env.METADATA_BASE),
+  metadataBase: new URL(process.env.METADATA_BASE || "http://localhost:3000"),
 };
 
 export default function RootLayout({ children }) {
