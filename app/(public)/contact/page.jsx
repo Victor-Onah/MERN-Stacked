@@ -1,3 +1,5 @@
+import ContactForm from "../components/contact-form";
+
 export async function generateMetadata() {
   return {
     title: "MERN Stacked | Contact",
@@ -28,44 +30,7 @@ export default function Page() {
               and I&apos;ll get back to you as soon as possible.
             </p>
           </div>
-          <form className="space-y-4">
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              <div className="flex flex-col">
-                <label htmlFor="name" className="text-sm font-semibold">
-                  Name
-                </label>
-                <input
-                  className="bg-slate-100 p-2 focus:outline-none rounded-md"
-                  id="name"
-                  placeholder="Your name"
-                />
-              </div>
-              <div className="flex flex-col">
-                <label htmlFor="email" className="text-sm font-semibold">
-                  Email
-                </label>
-                <input
-                  className="bg-slate-100 p-2 focus:outline-none rounded-md"
-                  id="email"
-                  type="email"
-                  placeholder="Your email"
-                />
-              </div>
-            </div>
-            <div className="flex flex-col">
-              <label htmlFor="message" className="text-sm font-semibold">
-                Message
-              </label>
-              <textarea
-                id="message"
-                placeholder="Your message"
-                className="min-h-[150px] bg-slate-100 p-2 focus:outline-none rounded-md"
-              ></textarea>
-            </div>
-            <button type="submit" className="w-full sm:w-auto">
-              Submit
-            </button>
-          </form>
+          <ContactForm />
         </div>
         <div className="space-y-6">
           <div>
