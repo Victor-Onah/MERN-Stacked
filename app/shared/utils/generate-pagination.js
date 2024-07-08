@@ -1,4 +1,4 @@
-export default function getPagination(currentPage, threshold, totalPages) {
+export default function generatePagination(currentPage, threshold, totalPages) {
   if (threshold < 5) threshold = 5;
   if (currentPage > totalPages) currentPage = 1;
   if (totalPages <= 5) {
