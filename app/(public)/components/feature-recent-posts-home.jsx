@@ -6,7 +6,7 @@ import { cookies } from "next/headers";
 export async function RecentPosts() {
   cookies();
   try {
-    const recentPosts = await getRecentPosts(undefined, 3);
+    const recentPosts = await getRecentPosts(3);
     return recentPosts.length > 0 ? (
       <div className="mx-auto grid max-w-5xl grid-cols-1 gap-12 py-12 sm:grid-cols-2 lg:grid-cols-3">
         {recentPosts.map((post, index) => (
@@ -35,7 +35,7 @@ export async function RecentPosts() {
 export async function FeaturePosts() {
   cookies();
   try {
-    const recentPosts = await getTrendingPosts(undefined, 3);
+    const recentPosts = await getTrendingPosts(3);
 
     return recentPosts.length > 0 ? (
       <div className="mx-auto grid max-w-5xl grid-cols-1 gap-12 py-12 sm:grid-cols-2 lg:grid-cols-3">
