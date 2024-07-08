@@ -48,7 +48,7 @@ export default function Nav() {
           Contact
         </Link>
         <Link
-          href="/blog"
+          href="/blog?page=1"
           className="text-sm font-medium hover:underline hover:text-blue-600 underline-offset-4"
           prefetch
         >
@@ -96,7 +96,7 @@ export default function Nav() {
           </Link>
           <Link
             onClick={closeMenu}
-            href="/blog"
+            href="/blog?page=1"
             className="text-sm font-medium hover:bg-blue-600 hover:text-white p-2 rounded-md"
             prefetch
           >
