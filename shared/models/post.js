@@ -6,6 +6,10 @@ const postSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  slug: {
+    type: String,
+    required: true,
+  }
   summary: {
     type: String,
     required: true,
@@ -16,20 +20,6 @@ const postSchema = new mongoose.Schema({
   },
   publishDate: {
     type: String,
-    required: true,
-  },
-  tags: {
-    type: [String],
-    enum: [
-      "JavaScript",
-      "Node JS",
-      "React JS",
-      "Mongo DB",
-      "Express JS",
-      "HTML",
-      "CSS",
-      "Git & Github",
-    ],
     required: true,
   },
   featuredImageUrl: {
