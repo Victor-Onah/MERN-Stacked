@@ -46,6 +46,7 @@ export default function Page() {
               Username
             </label>
             <input
+              required
               className="bg-slate-100 p-2 focus:outline-none rounded-md"
               id="username"
               placeholder="Your username"
@@ -57,6 +58,7 @@ export default function Page() {
               Password
             </label>
             <input
+              required
               type="password"
               className="bg-slate-100 p-2 focus:outline-none rounded-md"
               id="password"
