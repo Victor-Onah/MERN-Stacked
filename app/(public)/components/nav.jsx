@@ -28,28 +28,28 @@ export default function Nav() {
       <nav className="ml-auto flex gap-4 sm:gap-6 max-[720px]:hidden">
         <Link
           href="/"
-          className="text-sm font-medium hover:underline hover:text-blue-600 underline-offset-4"
+          className="text-sm font-medium hover:underline hover:text-zinc-600 underline-offset-4"
           prefetch
         >
           Home
         </Link>
         <Link
           href="/about"
-          className="text-sm font-medium hover:underline hover:text-blue-600 underline-offset-4"
+          className="text-sm font-medium hover:underline hover:text-zinc-600 underline-offset-4"
           prefetch
         >
           About
         </Link>
         <Link
           href="/contact"
-          className="text-sm font-medium hover:underline hover:text-blue-600 underline-offset-4"
+          className="text-sm font-medium hover:underline hover:text-zinc-600 underline-offset-4"
           prefetch
         >
           Contact
         </Link>
         <Link
           href="/blog?page=1"
-          className="text-sm font-medium hover:underline hover:text-blue-600 underline-offset-4"
+          className="text-sm font-medium hover:underline hover:text-zinc-600 underline-offset-4"
           prefetch
         >
           Blog
@@ -73,7 +73,7 @@ export default function Nav() {
           <Link
             onClick={closeMenu}
             href="/"
-            className="text-sm font-medium hover:bg-blue-600 hover:text-white p-2 rounded-md"
+            className="text-sm font-medium hover:bg-zinc-600 hover:text-white p-2 rounded-md"
             prefetch
           >
             Home
@@ -81,7 +81,7 @@ export default function Nav() {
           <Link
             onClick={closeMenu}
             href="/about"
-            className="text-sm font-medium hover:bg-blue-600 hover:text-white p-2 rounded-md"
+            className="text-sm font-medium hover:bg-zinc-600 hover:text-white p-2 rounded-md"
             prefetch
           >
             About
@@ -89,7 +89,7 @@ export default function Nav() {
           <Link
             onClick={closeMenu}
             href="/contact"
-            className="text-sm font-medium hover:bg-blue-600 hover:text-white p-2 rounded-md"
+            className="text-sm font-medium hover:bg-zinc-600 hover:text-white p-2 rounded-md"
             prefetch
           >
             Contact
@@ -97,7 +97,7 @@ export default function Nav() {
           <Link
             onClick={closeMenu}
             href="/blog?page=1"
-            className="text-sm font-medium hover:bg-blue-600 hover:text-white p-2 rounded-md"
+            className="text-sm font-medium hover:bg-zinc-600 hover:text-white p-2 rounded-md"
             prefetch
           >
             Blog

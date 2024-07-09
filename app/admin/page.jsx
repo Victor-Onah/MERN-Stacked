@@ -37,7 +37,7 @@ export default function Component() {
           </div>
           <div>
             <button
-              className="w-full bg-gradient-to-t from-blue-700 to-blue-500 p-2 rounded-md text-white hover:shadow-lg active:scale-95"
+              className="w-full bg-gradient-to-t from-zinc-700 to-zinc-500 p-2 rounded-md text-white hover:shadow-lg active:scale-95"
               type="submit"
             >
               Sign in
