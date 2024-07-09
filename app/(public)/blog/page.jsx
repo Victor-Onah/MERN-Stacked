@@ -22,9 +22,9 @@ export async function generateMetadata() {
 export default function Page() {
   return (
     <main className="flex-1">
-      <section className="w-full bg-gradient-to-b from-blue-100 via-blue-50 via-blue-50 to-white py-12 md:py-24 lg:py-32 text-center">
+      <section className="w-full bg-gradient-to-b from-zinc-100 via-zinc-50 via-zinc-50 to-white py-12 md:py-24 lg:py-32 text-center">
         <div className="px-4 md:px-6 flex gap-y-4 flex-col">
-          <h1 className="text-3xl font-bold sm:text-5xl xl:text-6xl/none max-w-4xl m-auto text-blue-800">
+          <h1 className="text-3xl font-bold sm:text-5xl xl:text-6xl/none max-w-4xl m-auto text-zinc-800">
             Explore My Latest Blog Posts
           </h1>
           <p className="max-w-[600px] m-auto md:text-xl">

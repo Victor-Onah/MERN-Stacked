@@ -23,9 +23,9 @@ export async function generateMetadata() {
 export default function Page() {
   return (
     <div className="flex flex-col min-h-[100dvh]">
-      <section className="w-full bg-gradient-to-b from-blue-100 via-blue-50 via-blue-50 to-white py-12 md:py-24 lg:py-32 text-center">
+      <section className="w-full bg-gradient-to-b from-zinc-100 via-zinc-50 via-zinc-50 to-white py-12 md:py-24 lg:py-32 text-center">
         <div className="px-4 md:px-6 flex gap-y-4 flex-col">
-          <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none max-w-4xl m-auto text-blue-800">
+          <h1 className="text-3xl font-bold sm:text-5xl xl:text-6xl max-w-4xl m-auto text-zinc-800">
             Welcome to MERN Stacked
           </h1>
           <p className="max-w-[600px] m-auto md:text-xl">
@@ -35,17 +35,17 @@ export default function Page() {
           </p>
         </div>
       </section>
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+      <section className="w-full py-12 md:py-24 lg:py-32">
         <div className="container px-4 md:px-6">
           <div className="grid gap-10 sm:px-10 md:gap-16 md:grid-cols-2">
             <div className="space-y-4">
-              <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">
+              <div className="inline-block rounded-lg px-3 py-1 text-sm">
                 About the Blog
               </div>
-              <h2 className="lg:leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">
+              <h2 className="lg:leading-tighter text-3xl font-bold sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">
                 Sharing Knowledge, Impacting Lives
               </h2>
-              <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              <p className="mx-auto max-w-[700px] md:text-xl lg:text-base xl:text-xl">
                 MERN Stacked is a platform where I share my passion for
                 learning, exploring new ideas, and empowering my readers.
                 Through a diverse range of topics, I aim to inspire and educate
@@ -54,13 +54,13 @@ export default function Page() {
               </p>
             </div>
             <div className="flex flex-col items-start space-y-4">
-              <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">
+              <div className="inline-block rounded-lg px-3 py-1 text-sm">
                 About the Author
               </div>
-              <h2 className="lg:leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">
+              <h2 className="lg:leading-tighter text-3xl font-bold sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">
                 Onah Victor
               </h2>
-              <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed">
+              <p className="mx-auto max-w-[700px] md:text-xl">
                 I&apos;m a passionate web developer, driven by a curiosity to
                 explore the world of programming. With a passion for the MERN
                 stack and JavaScript in particular, I&apos;m dedicated to
@@ -70,7 +70,7 @@ export default function Page() {
               </p>
               <Link
                 href="/contact"
-                className="bg-gradient-to-t from-blue-700 to-blue-500 p-2 rounded-md text-white flex items-center gap-2 hover:shadow-lg active:scale-95"
+                className="bg-gradient-to-t from-zinc-700 to-zinc-500 p-2 rounded-md text-white flex items-center gap-2 hover:shadow-lg active:scale-95"
               >
                 Get in touch
               </Link>

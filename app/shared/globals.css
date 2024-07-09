@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+	font-family: Anek_Malayalam;
+	src: url('./assets/fonts/Anek_Malayalam.ttf') format(truetype);
+	font-display: swap;
+}
+
 ::-webkit-search-cancel-button {
 	-webkit-appearance: none;
 	display: none;
@@ -13,6 +19,19 @@
 
 * {
 	scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: Anek_Malayalam, sans-serif;
+}
+
+main {
+	min-height: 100vh;
 }
 
 #menu-popover {
@@ -63,16 +82,5 @@
 	}
 	to {
 		margin-left: 100%;
-	}
-}
-
-@layer utilities {
-	.hero {
-		background-image: linear-gradient(
-				to top,
-				hsla(224, 76%, 48%, 0.3),
-				hsla(213, 94%, 68%, 0.3)
-			),
-			url(/images/icons-bg.png);
 	}
 }

@@ -17,7 +17,7 @@ export default function Page() {
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-              className="w-4 h-4 text-muted-foreground"
+              className="w-4 h-4"
             >
               <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
               <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
@@ -42,7 +42,7 @@ export default function Page() {
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-              className="w-4 h-4 text-muted-foreground"
+              className="w-4 h-4"
             >
               <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
               <circle cx="12" cy="12" r="3"></circle>
@@ -67,7 +67,7 @@ export default function Page() {
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-              className="w-4 h-4 text-muted-foreground"
+              className="w-4 h-4"
             >
               <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
             </svg>
@@ -91,7 +91,7 @@ export default function Page() {
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-              className="w-4 h-4 text-muted-foreground"
+              className="w-4 h-4"
             >
               <line x1="18" x2="18" y1="20" y2="10"></line>
               <line x1="12" x2="12" y1="20" y2="4"></line>
@@ -109,9 +109,7 @@ export default function Page() {
             <h3 className="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">
               Manage Posts
             </h3>
-            <p className="text-sm text-muted-foreground">
-              Create, edit, and delete blog posts.
-            </p>
+            <p className="text-sm">Create, edit, and delete blog posts.</p>
           </div>
           <div className="p-6">
             <div className="grid gap-2">
@@ -122,16 +120,16 @@ export default function Page() {
                 <table className="w-full caption-bottom text-sm">
                   <thead className="[&amp;_tr]:border-b">
                     <tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
-                      <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0">
+                      <th className="h-12 px-4 text-left align-middle font-medium [&amp;:has([role=checkbox])]:pr-0">
                         Title
                       </th>
-                      <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0">
+                      <th className="h-12 px-4 text-left align-middle font-medium [&amp;:has([role=checkbox])]:pr-0">
                         Status
                       </th>
-                      <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0">
+                      <th className="h-12 px-4 text-left align-middle font-medium [&amp;:has([role=checkbox])]:pr-0">
                         Views
                       </th>
-                      <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0">
+                      <th className="h-12 px-4 text-left align-middle font-medium [&amp;:has([role=checkbox])]:pr-0">
                         Actions
                       </th>
                     </tr>
@@ -199,7 +197,7 @@ export default function Page() {
             <h3 className="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">
               Manage Comments
             </h3>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm">
               View and respond to comments on your blog posts.
             </p>
           </div>
@@ -216,7 +214,7 @@ export default function Page() {
                   <div className="text-muted-foreground">
                     Great post! I really enjoyed the insights.
                   </div>
-                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                  <div className="flex items-center gap-2 text-xs">
                     <time datetime="2023-06-27">June 27, 2023</time>
                     <button className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10">
                       <svg
@@ -250,7 +248,7 @@ export default function Page() {
                   <div className="text-muted-foreground">
                     Awesome tips! Can&apos;t wait to try them out.
                   </div>
-                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                  <div className="flex items-center gap-2 text-xs">
                     <time datetime="2023-06-25">June 25, 2023</time>
                     <button className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10">
                       <svg
@@ -284,7 +282,7 @@ export default function Page() {
                   <div className="text-muted-foreground">
                     This is really helpful, thanks for sharing!
                   </div>
-                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                  <div className="flex items-center gap-2 text-xs">
                     <time datetime="2023-06-22">June 22, 2023</time>
                     <button className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10">
                       <svg

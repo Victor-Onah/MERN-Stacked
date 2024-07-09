@@ -41,7 +41,7 @@ export default function Page() {
           </div>
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <MailOpenIcon className="h-6 w-6 text-muted-foreground" />
+              <MailOpenIcon className="h-6 w-6" />
               <a
                 href="mailto:victoronah.dev@gmail.com"
                 target="_blank"
@@ -51,7 +51,7 @@ export default function Page() {
               </a>
             </div>
             <div className="flex items-center gap-2">
-              <TwitterIcon className="h-6 w-6 text-muted-foreground" />
+              <TwitterIcon className="h-6 w-6" />
               <a
                 href="https://twitter.com/@__allAboutJS"
                 className="text-primary hover:underline"
@@ -60,7 +60,7 @@ export default function Page() {
               </a>
             </div>
             <div className="flex items-center gap-2">
-              <LinkedinIcon className="h-6 w-6 text-muted-foreground" />
+              <LinkedinIcon className="h-6 w-6" />
               <a
                 href="https://www.linkedin.com/in/victor-onah-066563274/"
                 className="text-primary hover:underline"

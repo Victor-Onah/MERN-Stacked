@@ -28,7 +28,7 @@ export default function Loader() {
   return (
     <>
       <div className="h-[3px] fixed w-full top-0 left-0 z-[9999]">
-        <div className="loader w-0 h-full bg-blue-600"></div>
+        <div className="loader w-0 h-full bg-zinc-600"></div>
       </div>
       {isRouteChanging && (
         <div className="fixed inset-0 backdrop-blur-sm cursor-wait z-[999]"></div>
