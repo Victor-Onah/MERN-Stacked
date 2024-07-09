@@ -62,7 +62,7 @@ export default function Card({ props }) {
         <h3 className="text-lg font-semibold group-hover:underline">
           {props.title}
         </h3>
-        <p className="text-xs text-muted-foreground">
+        <p className="text-xs">
           {props.lastModified ? "Updated" : "Published"} on {month} {day}, 2023
         </p>
       </div>

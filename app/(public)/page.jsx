@@ -14,7 +14,7 @@ export default function Page() {
       <main className="flex-1">
         <section className="w-full bg-gradient-to-b from-zinc-100 via-zinc-50 via-zinc-50 to-white py-12 md:py-24 lg:py-32 text-center">
           <div className="px-4 md:px-6 flex gap-y-4 flex-col">
-            <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none max-w-4xl m-auto text-zinc-800">
+            <h1 className="text-3xl font-bold sm:text-5xl xl:text-6xl/none max-w-4xl m-auto text-zinc-800">
               Dive into the MERN stack
             </h1>
             <p className="max-w-[600px] m-auto md:text-xl">
@@ -27,10 +27,10 @@ export default function Page() {
           <div className="px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                <h2 className="text-3xl font-bold sm:text-5xl">
                   Featured Articles
                 </h2>
-                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                <p className="max-w-[900px] md:text-xl lg:text-base xl:text-xl">
                   Explore my expertly curated selection of the most insightful
                   and engaging articles.
                 </p>
@@ -53,10 +53,8 @@ export default function Page() {
           <div className="px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  Recent Posts
-                </h2>
-                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                <h2 className="text-3xl font-bold sm:text-5xl">Recent Posts</h2>
+                <p className="max-w-[900px] md:text-xl lg:text-base xl:text-xl">
                   Check out my latest blog posts and stay up-to-date with the
                   latest trends and insights.
                 </p>

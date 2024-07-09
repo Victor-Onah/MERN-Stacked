@@ -16,7 +16,7 @@ export default function DashboardStats() {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            className="w-4 h-4 text-muted-foreground"
+            className="w-4 h-4"
           >
             <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
             <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
@@ -41,7 +41,7 @@ export default function DashboardStats() {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            className="w-4 h-4 text-muted-foreground"
+            className="w-4 h-4"
           >
             <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
             <circle cx="12" cy="12" r="3"></circle>
@@ -66,7 +66,7 @@ export default function DashboardStats() {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            className="w-4 h-4 text-muted-foreground"
+            className="w-4 h-4"
           >
             <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
           </svg>
@@ -90,7 +90,7 @@ export default function DashboardStats() {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            className="w-4 h-4 text-muted-foreground"
+            className="w-4 h-4"
           >
             <line x1="18" x2="18" y1="20" y2="10"></line>
             <line x1="12" x2="12" y1="20" y2="4"></line>

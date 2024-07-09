@@ -15,7 +15,7 @@ export default function Page() {
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-              class="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground"
+              class="absolute left-3 top-1/2 -translate-y-1/2"
             >
               <circle cx="11" cy="11" r="8"></circle>
               <path d="m21 21-4.3-4.3"></path>
@@ -34,22 +34,22 @@ export default function Page() {
           <table class="w-full caption-bottom text-sm">
             <thead class="[&amp;_tr]:border-b">
               <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
-                <th class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0">
+                <th class="h-12 px-4 text-left align-middle font-medium [&amp;:has([role=checkbox])]:pr-0">
                   Name
                 </th>
-                <th class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0">
+                <th class="h-12 px-4 text-left align-middle font-medium [&amp;:has([role=checkbox])]:pr-0">
                   Email
                 </th>
-                <th class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0">
+                <th class="h-12 px-4 text-left align-middle font-medium [&amp;:has([role=checkbox])]:pr-0">
                   Comment
                 </th>
-                <th class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0">
+                <th class="h-12 px-4 text-left align-middle font-medium [&amp;:has([role=checkbox])]:pr-0">
                   Date
                 </th>
-                <th class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0">
+                <th class="h-12 px-4 text-left align-middle font-medium [&amp;:has([role=checkbox])]:pr-0">
                   Status
                 </th>
-                <th class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0">
+                <th class="h-12 px-4 text-left align-middle font-medium [&amp;:has([role=checkbox])]:pr-0">
                   Actions
                 </th>
               </tr>
