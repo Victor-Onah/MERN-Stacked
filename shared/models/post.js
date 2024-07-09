@@ -19,7 +19,7 @@ const postSchema = new mongoose.Schema({
     required: true,
   },
   publishDate: {
-    type: String,
+    type: Number,
     required: true,
   },
   featuredImageUrl: {
@@ -30,7 +30,7 @@ const postSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  lastUpdated: String,
+  lastUpdated: Number,
   impressions: {
     type: Number,
     default: 0,
