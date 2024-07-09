@@ -1,7 +1,7 @@
 "use client";
 
 import validateBeforeSubmit from "../utils/contact-form-validator";
-import SubmitBtn from "./message-submit-button";
+import { useFormStatus } from "react-dom";
 import { useState } from "react";
 
 export default function ContactForm(params) {
@@ -65,5 +65,19 @@ export default function ContactForm(params) {
       </div>
       <SubmitBtn />
     </form>
+  );
+}
+
+function SubmitBtn() {
+  const { pending } = useFormStatus();
+
+  return (
+    <button
+      disabled={pending || false}
+      type="submit"
+      className="bg-gradient-to-t from-zinc-700 to-zinc-500 p-2 rounded-md text-sm text-whitehover:shadow-lg active:scale-95 max-md:w-full text-white disabled:opacity-50 min-w-44 md:float-right"
+    >
+      {pending ? "Submitting..." : "Submit"}
+    </button>
   );
 }
