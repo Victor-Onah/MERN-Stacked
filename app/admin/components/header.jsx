@@ -10,7 +10,7 @@ export default function Header() {
         <Loader />
       </Suspense>
       <Link className="text-2xl font-bold" href="/admin/dashboard">
-        Dashboard
+        Admin Dashboard
       </Link>
       <Nav />
     </header>
