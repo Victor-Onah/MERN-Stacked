@@ -10,7 +10,7 @@ export default function Header() {
       <Suspense fallback={null}>
         <Loader />
       </Suspense>
-      <header className="p-2 lg:p-6 sticky top-0 w-full backdrop-blur-lg bg-white shadow-sm z-50 overflow-x-hidden">
+      <header className="p-3 sticky top-0 w-full backdrop-blur-lg bg-white shadow-sm z-50 overflow-x-hidden">
         <div className="justify-between max-w-screen-xl m-auto flex items-center">
           <Link
             href="/"
