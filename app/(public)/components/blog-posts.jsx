@@ -10,7 +10,7 @@ export default async function BlogPosts() {
     return recentPosts.length > 0 ? (
       <div className="mx-auto grid max-w-5xl grid-cols-1 gap-12 py-12 sm:grid-cols-2 lg:grid-cols-3">
         {recentPosts.map((post, index) => (
-          <Card key={index} {...post} />
+          <Card key={index} {...post._doc} />
         ))}
       </div>
     ) : (
