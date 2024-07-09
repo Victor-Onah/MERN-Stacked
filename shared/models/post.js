@@ -9,7 +9,7 @@ const postSchema = new mongoose.Schema({
   slug: {
     type: String,
     required: true,
-  }
+  },
   summary: {
     type: String,
     required: true,
