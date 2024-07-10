@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { CgArrowRight } from "react-icons/cg";
 import { Suspense } from "react";
 import {
   RecentPosts,
@@ -44,7 +43,18 @@ export default function Page() {
                 href="/blog"
                 className="bg-gradient-to-t from-zinc-700 to-zinc-500 p-2 rounded-md text-sm text-white flex items-center gap-2 hover:shadow-lg active:scale-95"
               >
-                Visit the blog <CgArrowRight />
+                Visit the blog{" "}
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="20px"
+                    viewBox="0 -960 960 960"
+                    width="20px"
+                    fill="#FFFFFF"
+                  >
+                    <path d="m576-288-51-51 105-105H192v-72h438L525-621l51-51 192 192-192 192Z" />
+                  </svg>
+                </span>
               </Link>
             </div>
           </div>
@@ -69,7 +79,18 @@ export default function Page() {
               href="/blog"
               className="bg-gradient-to-t from-zinc-700 to-zinc-500 p-2 rounded-md text-sm text-white flex items-center gap-2 hover:shadow-lg active:scale-95"
             >
-              Visit the blog <CgArrowRight />
+              Visit the blog{" "}
+              <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="20px"
+                  viewBox="0 -960 960 960"
+                  width="20px"
+                  fill="#FFFFFF"
+                >
+                  <path d="m576-288-51-51 105-105H192v-72h438L525-621l51-51 192 192-192 192Z" />
+                </svg>
+              </span>
             </Link>
           </div>
         </section>

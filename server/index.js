@@ -25,14 +25,6 @@ app
     server.use(express.json());
     server.use(express.static(resolve(process.cwd(), "public")));
 
-    server.get("/blog/:slug", async (req, res) => {
-      await app.render(req, res, re.url, query);
-      try {
-        await updatePostViews(req.params.slug);
-      } catch (error) {
-        console.error(error);
-      }
-    });
     server.all("*", (req, res) => {
       const parsedUrl = parse(req.url, true);
 

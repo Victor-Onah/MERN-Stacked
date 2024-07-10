@@ -17,15 +17,14 @@ const months = [
 ];
 
 export function SecondaryCard(props) {
-  console.log('Props', props)
   return (
     <Link
-      href={`/${props.slug}`}
+      href={`/blog/${props.slug}`}
       className="grid h-auto w-full items-start justify-start gap-2 rounded-md focus:outline-none"
       prefetch
     >
       <Image
-        src={`/${props.featuredImageUrl}`}
+        src={`${props.featuredImageUrl}`}
         width="550"
         height="310"
         alt={props.title}
@@ -42,19 +41,18 @@ export function SecondaryCard(props) {
 }
 
 export default function Card(props) {
-  console.log('Props', props)
   const date = new Date(props.lastModified || props.publishDate);
   const day = date.getDate();
   const month = months[date.getMonth()];
 
   return (
     <Link
-      href={`/${props.slug}`}
+      href={`/blog/${props.slug}`}
       className="grid h-auto w-full items-start justify-start gap-2 rounded-md focus:outline-none"
       prefetch
     >
       <Image
-        src={`/${props.featuredImageUrl}`}
+        src={`${props.featuredImageUrl}`}
         width="550"
         height="310"
         alt={props.title}

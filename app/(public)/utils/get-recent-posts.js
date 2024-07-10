@@ -8,7 +8,7 @@ export default async function getRecentPosts(limit) {
     await connectToDb();
     return await Post.find()
       .sort({ publishDate: -1 })
-      .select("title summary featuredImageUrl publishDate lastModified")
+      .select("title summary featuredImageUrl publishDate lastModified slug")
       .limit(limit || 6);
   } catch (error) {
     return [];

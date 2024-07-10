@@ -9,7 +9,7 @@ export default function Header() {
       <Suspense fallback={null}>
         <Loader />
       </Suspense>
-      <Link className="text-2xl font-bold" href="/admin/dashboard">
+      <Link className="text-lg font-semibold" href="/admin/dashboard">
         Admin Dashboard
       </Link>
       <Nav />

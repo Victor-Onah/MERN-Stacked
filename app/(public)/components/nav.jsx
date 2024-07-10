@@ -1,6 +1,5 @@
 "use client";
 
-import { CgMenu, CgClose } from "react-icons/cg";
 import Link from "next/link";
 import Search from "./search";
 
@@ -23,7 +22,15 @@ export default function Nav() {
         title="Menu"
         onClick={openMenu}
       >
-        <CgMenu />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="20px"
+          viewBox="0 -960 960 960"
+          width="20px"
+          fill="#000000"
+        >
+          <path d="M144-264v-72h672v72H144Zm0-180v-72h672v72H144Zm0-180v-72h672v72H144Z" />
+        </svg>
       </button>
       <nav className="ml-auto flex gap-4 sm:gap-6 max-[720px]:hidden">
         <Link
@@ -68,7 +75,15 @@ export default function Nav() {
             aria-label="Close menu"
             className="h-12 w-12 flex justify-center items-center rounded-full active:bg-zinc-100 absolute top-0 right-0 bg-white"
           >
-            <CgClose />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="20px"
+              viewBox="0 -960 960 960"
+              width="20px"
+              fill="#000000"
+            >
+              <path d="m291-240-51-51 189-189-189-189 51-51 189 189 189-189 51 51-189 189 189 189-51 51-189-189-189 189Z" />
+            </svg>
           </button>
           <Link
             onClick={closeMenu}
