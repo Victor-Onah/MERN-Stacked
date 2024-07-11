@@ -33,9 +33,7 @@ export default async function Page({ params }) {
       <div
         className="blog-post"
         dangerouslySetInnerHTML={{
-          __html: `<img alt="${post.title}" src="${
-            post.featuredImageUrl
-          }" width="720" />${await markdownToHtml(post.content)}`,
+          __html: `${await markdownToHtml(post.content)}`,
         }}
       ></div>
     </>
