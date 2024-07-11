@@ -1,10 +1,12 @@
 import getRecentPosts from "../utils/get-recent-posts";
 import getTrendingPosts from "../utils/get-trending-posts";
 import Card, { SecondaryCard } from "./card";
-import { cookies } from "next/headers";
+import { unstable_noStore as noStore } from "next/cache";
 
 export async function RecentPosts() {
-  cookies();
+  // Do not remove!
+  noStore();
+
   try {
     const recentPosts = await getRecentPosts(3);
 
@@ -34,7 +36,8 @@ export async function RecentPosts() {
 }
 
 export async function FeaturePosts() {
-  cookies();
+  noStore();
+
   try {
     const recentPosts = await getTrendingPosts(3);
 

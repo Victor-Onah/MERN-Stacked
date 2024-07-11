@@ -7,6 +7,7 @@ function closeMenu() {
   const menuPopover = document.getElementById("menu-popover");
   menuPopover.close();
 }
+
 function openMenu() {
   const menuPopover = document.getElementById("menu-popover");
   menuPopover.showModal();

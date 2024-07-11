@@ -12,13 +12,16 @@ export default function Page() {
   const [title, setTitle] = useState("");
   const [summary, setSummary] = useState("");
   const [keywords, setKeywords] = useState([]);
-  const [featuredImageUrl, setFeauturedImageUrl] = useState('');
+  const [featuredImageUrl, setFeauturedImageUrl] = useState("");
 
   async function publish() {
     try {
       const isPostPublished = await publishPost({
         title,
-        slug: title.replaceAll(/[\s]/g, "-").replaceAll(/[^\w\-]/g, ""),
+        slug: title
+          .replaceAll(/[\s]/g, "-")
+          .replaceAll(/[^\w\-]/g, "")
+          .toLowerCase(),
         summary,
         content: postBody,
         featuredImageUrl,

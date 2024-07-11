@@ -6,6 +6,7 @@ import Post from "../../../shared/models/post";
 export default async function getRecentPosts(limit) {
   try {
     await connectToDb();
+
     return await Post.find()
       .sort({ publishDate: -1 })
       .select("title summary featuredImageUrl publishDate lastModified slug")

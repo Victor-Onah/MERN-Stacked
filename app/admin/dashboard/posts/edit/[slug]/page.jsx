@@ -3,22 +3,27 @@
 import "@uiw/react-md-editor/markdown-editor.css";
 import "@uiw/react-markdown-preview/markdown.css";
 import MDEditor from "@uiw/react-md-editor";
-import { useState } from "react";
+import { useState, useLayoutEffect } from "react";
 import { useFormStatus } from "react-dom";
-import publishPost from "../../../utils/publish-post";
+import savePost from "../../../../utils/save-post";
+import fetchPost from "../../../../../shared/utils/fetch-post";
 
-export default function Page() {
+export default function Page({ params }) {
+  const [postLoadStatus, setPostLoadStatus] = useState("pending");
   const [postBody, setPostBody] = useState("");
   const [title, setTitle] = useState("");
   const [summary, setSummary] = useState("");
   const [keywords, setKeywords] = useState([]);
   const [featuredImageUrl, setFeauturedImageUrl] = useState("");
 
-  async function publish() {
+  async function save() {
     try {
-      const isPostPublished = await publishPost({
+      const isPostPublished = await savePost({
         title,
-        slug: title.replaceAll(/[\s]/g, "-").replaceAll(/[^\w\-]/g, ""),
+        slug: title
+          .replaceAll(/[\s]/g, "-")
+          .replaceAll(/[^\w\-]/g, "")
+          .toLowerCase(),
         summary,
         content: postBody,
         featuredImageUrl,
@@ -29,16 +34,30 @@ export default function Page() {
       if (!isPostPublished) return alert("Your post was not published!");
       else {
         alert("Your post has been submitted!");
-        setPostBody("");
-        setTitle("");
-        setFeauturedImageUrl("");
-        setKeywords([]);
-        setSummary("");
       }
     } catch (error) {
       alert(error.message);
     }
   }
+
+  useLayoutEffect(() => {
+    (async () => {
+      try {
+        const { data, status } = await fetchPost(params.slug);
+
+        if (status === "successful") {
+          setPostLoadStatus(status);
+          setPostBody(data.content);
+          setTitle(data.title);
+          setSummary(data.summary);
+          setKeywords(data.keywords.split(","));
+          setFeauturedImageUrl(data.featuredImageUrl);
+        }
+      } catch (error) {
+        setPostLoadStatus("failed");
+      }
+    })();
+  }, []);
 
   return (
     <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-4">
@@ -82,8 +101,8 @@ export default function Page() {
               <path d="M263.72-96Q234-96 213-117.15T192-168v-624q0-29.7 21.15-50.85Q234.3-864 264-864h312l192 192v504q0 29.7-21.16 50.85Q725.68-96 695.96-96H263.72ZM528-624v-168H264v624h432v-456H528ZM264-792v189-189 624-624Z" />
             </svg>
           </button>
-          <form action={publish}>
-            <PublishBtn />
+          <form action={save}>
+            <SaveBtn />
           </form>
         </div>
       </div>
@@ -91,14 +110,14 @@ export default function Page() {
   );
 }
 
-function PublishBtn() {
+function SaveBtn() {
   const { pending } = useFormStatus();
   return (
     <button
       disable={pending}
       className="h-10 px-4 inline-flex items-center justify-center bg-zinc-800 active:bg-zinc-700 rounded-md text-white mt-6 disabled:opacity-70"
     >
-      Publish{" "}
+      Save{" "}
       {pending ? (
         <span className="animate-spin">
           <svg
@@ -112,15 +131,7 @@ function PublishBtn() {
           </svg>
         </span>
       ) : (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          height="20px"
-          viewBox="0 -960 960 960"
-          width="20px"
-          fill="#FFFFFF"
-        >
-          <path d="M444-192v-342L339-429l-51-51 192-192 192 192-51 51-105-105v342h-72ZM192-672v-72q0-29.7 21.16-50.85Q234.32-816 264.04-816h432.24Q726-816 747-794.85T768-744v72h-72v-72H264v72h-72Z" />
-        </svg>
+        ""
       )}
     </button>
   );

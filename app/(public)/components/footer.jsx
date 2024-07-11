@@ -1,11 +1,8 @@
-// DO NOT REMOVE!!!
-// This import causes Next.js to make the footer a dynamic component.
-// The dynamism is required for automatically updating the year.
 import { unstable_noStore as noStore } from "next/cache";
 import Link from "next/link";
 
 export default function Footer() {
-  // DO NOT REMOVE!!!
+  // DO not remove!
   noStore();
   return (
     <footer className="text-xs p-4 md:p-6 border-t bg-slate-50 text-center space-y-4">

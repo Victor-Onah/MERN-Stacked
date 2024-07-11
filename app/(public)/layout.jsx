@@ -1,14 +1,6 @@
-import { Archivo, Cutive_Mono } from "next/font/google";
 import Footer from "./components/footer";
 import Header from "./components/header";
 import "../shared/globals.css";
-
-const archivo = Archivo({ subsets: ["latin"] });
-const cutiveMono = Cutive_Mono({
-  subsets: ["latin"],
-  variable: "--cutive-mono",
-  weight: ["400"],
-});
 
 export const metadata = {
   title: "MERN Stacked - Exploring the MERN Stack and more",
@@ -30,7 +22,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={archivo.className}>
+      <body>
         <Header />
         {children}
         <Footer />

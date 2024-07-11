@@ -1,12 +1,13 @@
 import getRecentPosts from "../utils/get-recent-posts";
-import getTrendingPosts from "../utils/get-trending-posts";
-import Card, { SecondaryCard } from "./card";
-import { cookies } from "next/headers";
+import Card from "./card";
+import { unstable_noStore as noStore } from "next/cache";
 
 export default async function BlogPosts() {
-  cookies();
+  noStore();
+
   try {
     const recentPosts = await getRecentPosts(24);
+
     return recentPosts.length > 0 ? (
       <div className="mx-auto grid max-w-5xl grid-cols-1 gap-12 py-12 sm:grid-cols-2 lg:grid-cols-3">
         {recentPosts.map((post, index) => (
