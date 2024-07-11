@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 
 const months = [
   "January",
@@ -23,7 +22,8 @@ export function SecondaryCard(props) {
       className="grid h-auto w-full items-start justify-start gap-2 rounded-md focus:outline-none"
       prefetch
     >
-      <Image
+      <img
+        loading="lazy"
         src={`${props.featuredImageUrl}`}
         width="550"
         height="310"
@@ -51,7 +51,8 @@ export default function Card(props) {
       className="grid h-auto w-full items-start justify-start gap-2 rounded-md focus:outline-none"
       prefetch
     >
-      <Image
+      <img
+        loading="lazy"
         src={`${props.featuredImageUrl}`}
         width="550"
         height="310"

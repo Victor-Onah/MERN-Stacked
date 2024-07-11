@@ -292,6 +292,7 @@ main {
 .blog-post ul li,
 .blog-post ol li {
     margin-bottom: 0.5em;
+    list-style: auto;
 }
 
 .blog-post a {

@@ -34,7 +34,7 @@ export default async function BlogPosts() {
 
 export function BlogPostsOptimisticUi() {
   return (
-    <div className="mx-auto grid max-w-5xl grid-cols-1 gap-12 py-12 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="mx-auto grid max-w-5xl grid-cols-1 gap-12 py-12 sm:grid-cols-2 lg:grid-cols-3 animate-pulse">
       <div className="h-[180px] w-full rounded-xl bg-gradient-to-tr from-zinc-200 to-zinc-50"></div>
       <div className="h-[180px] w-full rounded-xl bg-gradient-to-tr from-zinc-200 to-zinc-50"></div>
       <div className="h-[180px] w-full rounded-xl bg-gradient-to-tr from-zinc-200 to-zinc-50"></div>

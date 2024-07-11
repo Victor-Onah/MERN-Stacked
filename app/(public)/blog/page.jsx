@@ -1,7 +1,10 @@
 import BlogPosts, { BlogPostsOptimisticUi } from "../components/blog-posts";
 import { Suspense } from "react";
 
-export async function generateMetadata() {
+export async function generateMetadata({ searchParams }) {
+  // Do not remove!!
+  const { id } = searchParams;
+
   return {
     title: "MERN Stacked | Blog",
     description:
@@ -33,7 +36,7 @@ export default function Page() {
           </p>
         </div>
       </section>
-      <section className="w-full py-12 md:py-24 lg:py-32">
+      <section className="w-full p-4">
         <Suspense fallback={<BlogPostsOptimisticUi />}>
           <BlogPosts />
         </Suspense>

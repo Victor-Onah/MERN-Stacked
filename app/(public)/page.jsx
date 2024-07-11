@@ -7,6 +7,27 @@ import {
   PostOptimisticUi,
 } from "./components/feature-recent-posts-home";
 
+export async function generateMetadata({ searchParams }) {
+  // Do not remove!!
+  const { id } = searchParams;
+
+  return {
+    title: "MERN Stacked - Exploring the MERN Stack and more",
+    description:
+      "Buckle up for a head-first dive into the MERN Stack. Join Onah Victor as he shares his knowledge and experiences through insightful articles.",
+    openGraph: {
+      title: "MERN Stacked - Exploring the MERN Stack and more",
+      description:
+        "Buckle up for a head-first dive into the MERN Stack. Join Onah Victor as he shares his knowledge and experiences through insightful articles.",
+    },
+    twitter: {
+      title: "MERN Stacked - Exploring the MERN Stack and more",
+      description:
+        "Buckle up for a head-first dive into the MERN Stack. Join Onah Victor as he shares his knowledge and experiences through insightful articles.",
+    },
+  };
+}
+
 export default function Page() {
   return (
     <div className="flex flex-col min-h-[100dvh]">
@@ -22,7 +43,7 @@ export default function Page() {
             </p>
           </div>
         </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-white via-white via-white to-zinc-100">
+        <section className="w-full py-12 bg-gradient-to-b from-white via-white via-white to-zinc-100">
           <div className="px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -59,7 +80,7 @@ export default function Page() {
             </div>
           </div>
         </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-zinc-100">
+        <section className="w-full py-12 bg-zinc-100">
           <div className="px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
