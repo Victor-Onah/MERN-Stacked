@@ -1,0 +1,37 @@
+import { useFormStatus } from "react-dom";
+
+/**
+ * Button for publishing posts
+ * @returns {import('react').JSX}
+ */
+export default function PublishBtn() {
+	const { pending } = useFormStatus();
+	return (
+		<button
+			disable={pending}
+			className="h-10 px-4 inline-flex gap-1 items-center justify-center bg-zinc-800 active:bg-zinc-700 rounded-md text-white mt-6 disabled:opacity-70">
+			Publish{" "}
+			{pending ? (
+				<span className="animate-spin">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						height="20px"
+						viewBox="0 -960 960 960"
+						width="20px"
+						fill="#FFFFFF">
+						<path d="M480-96q-78.72 0-148.8-30.24-70.08-30.24-122.4-82.56-52.32-52.32-82.56-122.4Q96-401.28 96-480q0-79.68 30.22-149.28 30.21-69.6 82.49-121.92 52.28-52.32 122.3-82.56Q401.04-864 479.69-864 496-864 506-854t10 25.51q0 15.51-10 26T480-792q-129.67 0-220.84 90.5Q168-611 168-480.5T259.16-259q91.17 91 220.84 91 131 0 221.5-91.16Q792-350.33 792-480q0-16 10.49-26t26-10Q844-516 854-506q10 10 10 26.31 0 78.65-30.24 148.68-30.24 70.02-82.56 122.3-52.32 52.28-121.92 82.49Q559.68-96 480-96Z" />
+					</svg>
+				</span>
+			) : (
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					height="20px"
+					viewBox="0 -960 960 960"
+					width="20px"
+					fill="#FFFFFF">
+					<path d="M444-192v-342L339-429l-51-51 192-192 192 192-51 51-105-105v342h-72ZM192-672v-72q0-29.7 21.16-50.85Q234.32-816 264.04-816h432.24Q726-816 747-794.85T768-744v72h-72v-72H264v72h-72Z" />
+				</svg>
+			)}
+		</button>
+	);
+}
