@@ -7,33 +7,6 @@ import {
 } from "./components/feature-recent-posts-home";
 import { unstable_noStore as noStore } from "next/cache";
 
-/**
- * @typedef {import('next').Metadata} Metadata
- */
-
-/**
- * Generate metadata for the Home page.
- * @param {{params: {slug: string}}} args
- * @returns {Metadata} - Object containing the metadata of the current blog post.
- */
-export async function generateMetadata({ searchParams }) {
-	return {
-		title: "MERN Stacked - Exploring the MERN Stack and more",
-		description:
-			"Buckle up for a head-first dive into the MERN Stack. Join Onah Victor as he shares his knowledge and experiences through insightful articles.",
-		openGraph: {
-			title: "MERN Stacked - Exploring the MERN Stack and more",
-			description:
-				"Buckle up for a head-first dive into the MERN Stack. Join Onah Victor as he shares his knowledge and experiences through insightful articles."
-		},
-		twitter: {
-			title: "MERN Stacked - Exploring the MERN Stack and more",
-			description:
-				"Buckle up for a head-first dive into the MERN Stack. Join Onah Victor as he shares his knowledge and experiences through insightful articles."
-		}
-	};
-}
-
 /** Home page */
 export default function Page() {
 	// Prevents caching of this component
