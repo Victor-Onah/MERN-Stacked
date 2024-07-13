@@ -1,6 +1,10 @@
 import publishPost from "./publish-post-server";
 
 /**
+ * @typedef {import('react')} React
+ */
+
+/**
  * @typedef Post
  * @property {string} title - The title of the post.
  * @property {string} slug - The dynamic portion of the post's URL.
@@ -12,22 +16,22 @@ import publishPost from "./publish-post-server";
  */
 
 /**
- * @typedef import("react").Dispatchers
- * @property {import("react").Dispatch<import("react").SetStateAction<''>} setTitle
- * @property {import("react").Dispatch<SetStateAction<''>} setSummary
- * @property {import("react").Dispatch<SetStateAction<''>} setContent
- * @property {import("react").Dispatch<SetStateAction<''>} setFeaturedImageUrl
- * @property {import("react").Dispatch<SetStateAction<[]>} setKeywords
+ * @typedef Dispatchers
+ * @property {React.Dispatch<React.SetStateAction<string>} setTitle
+ * @property {React.Dispatch<SetStateAction<string>} setSummary
+ * @property {React.Dispatch<SetStateAction<string>} setContent
+ * @property {React.Dispatch<SetStateAction<string>} setFeaturedImageUrl
+ * @property {React.Dispatch<SetStateAction<Array<string>} setKeywords
  */
 
 /**
  * Invokes action for saving the edited blog posts
  * @param {Post} post - An object containing the post's information
- * @param {import("react").Dispatchers} import("react").Dispatchers - An object containing import("react").Dispatchers (`setState()`)
+ * @param {Dispatchers} dispatchers - An object containing action dispatchers for setting states (`setState()`)
  * @returns {Promise<undefined>}
  */
 
-export default async function publish(post, import("react").Dispatchers) {
+export default async function publish(post, dispatchers) {
 	try {
 		const isPostPublished = await publishPost(post);
 
@@ -39,7 +43,7 @@ export default async function publish(post, import("react").Dispatchers) {
 				setKeywords,
 				setSummary,
 				setTitle
-			} = import("react").Dispatchers;
+			} = dispatchers;
 
 			alert("Your post has been submitted!");
 			setContent("");
