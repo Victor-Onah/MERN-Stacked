@@ -1,6 +1,6 @@
 /**
  * Page for path `/admin/dashboard`
- * @returns {import('react').JSX.Element}
+ * @returns {import("react").JSX.Element}
  */
 export default function Page() {
 	return (

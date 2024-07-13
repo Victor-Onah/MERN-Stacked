@@ -14,7 +14,7 @@ import ErrorUI from "./components/error";
 /**
  * Page for path `/admin/dashboard/posts/edit/[slug]`.
  * @param {{params: string}}
- * @returns {import('react').JSX.Element} JSX Element.
+ * @returns {import("react").JSX.Element} JSX Element.
  */
 export default function Page({ params }) {
 	const [postLoadStatus, setPostLoadStatus] = useState("pending");

@@ -3,7 +3,7 @@ import { useState } from "react";
 /**
  * @typedef {Object} Params
  * @property {Array<string>} keywords - Array of added keywords.
- * @property {import('react').Dispatch<SetStateAction<string>>} setKeywords - Invoke with a string to add more keywords to te keywords array.
+ * @property {import("react").Dispatch<SetStateAction<string>>} setKeywords - Invoke with a string to add more keywords to te keywords array.
  */
 
 /**

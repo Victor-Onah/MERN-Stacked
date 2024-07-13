@@ -10,7 +10,7 @@ import publish from "./utils/publish-post";
 
 /**
  * Page component for path `/admin/dashboard/posts/create`
- * @returns {import('react').JSX}
+ * @returns {JSX}
  */
 export default function Page() {
 	const [content, setContent] = useState("");

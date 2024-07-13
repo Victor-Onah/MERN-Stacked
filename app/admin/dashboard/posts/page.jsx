@@ -2,7 +2,7 @@ import Link from "next/link";
 
 /**
  * Page for path  `/admin/dashboard/posts`
- * @returns {import('react').JSX.Element}
+ * @returns {import("react").JSX.Element}
  */
 export default function Page() {
 	return (

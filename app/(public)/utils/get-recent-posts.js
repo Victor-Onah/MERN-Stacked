@@ -3,7 +3,12 @@
 import connectToDb from "../../../shared/utils/connect-to-db";
 import Post from "../../../shared/models/post";
 
-export default async function getRecentPosts(limit) {
+/**
+ * Retrieves the most recent posts on the database by `publishDate`
+ * @param {number} limit Number of posts to retrieve. Defaults to 6
+ * @returns {Promise<Array<{} & {_doc: {slug: string, featuredImageUrl: string, title: string, publishDate: number, lastUpdated?: number}}>>}
+ */
+export default async function getRecentPosts(limit = 6) {
 	try {
 		await connectToDb();
 
@@ -12,7 +17,7 @@ export default async function getRecentPosts(limit) {
 			.select(
 				"title summary featuredImageUrl publishDate lastUpdated slug"
 			)
-			.limit(limit || 6);
+			.limit(limit);
 	} catch (error) {
 		return [];
 	}

@@ -2,7 +2,7 @@ import { useFormStatus } from "react-dom";
 
 /**
  * Button for publishing posts
- * @returns {import('react').JSX}
+ * @returns {JSX}
  */
 export default function PublishBtn() {
 	const { pending } = useFormStatus();

@@ -12,22 +12,22 @@ import publishPost from "./publish-post-server";
  */
 
 /**
- * @typedef Dispatchers
- * @property {import('react').Dispatch<import("react").SetStateAction<''>} setTitle
- * @property {import('react').Dispatch<SetStateAction<''>} setSummary
- * @property {import('react').Dispatch<SetStateAction<''>} setContent
- * @property {import('react').Dispatch<SetStateAction<''>} setFeaturedImageUrl
- * @property {import('react').Dispatch<SetStateAction<[]>} setKeywords
+ * @typedef import("react").Dispatchers
+ * @property {import("react").Dispatch<import("react").SetStateAction<''>} setTitle
+ * @property {import("react").Dispatch<SetStateAction<''>} setSummary
+ * @property {import("react").Dispatch<SetStateAction<''>} setContent
+ * @property {import("react").Dispatch<SetStateAction<''>} setFeaturedImageUrl
+ * @property {import("react").Dispatch<SetStateAction<[]>} setKeywords
  */
 
 /**
  * Invokes action for saving the edited blog posts
  * @param {Post} post - An object containing the post's information
- * @param {Dispatchers} dispatchers - An object containing dispatchers (`setState()`)
+ * @param {import("react").Dispatchers} import("react").Dispatchers - An object containing import("react").Dispatchers (`setState()`)
  * @returns {Promise<undefined>}
  */
 
-export default async function publish(post, dispatchers) {
+export default async function publish(post, import("react").Dispatchers) {
 	try {
 		const isPostPublished = await publishPost(post);
 
@@ -39,7 +39,7 @@ export default async function publish(post, dispatchers) {
 				setKeywords,
 				setSummary,
 				setTitle
-			} = dispatchers;
+			} = import("react").Dispatchers;
 
 			alert("Your post has been submitted!");
 			setContent("");

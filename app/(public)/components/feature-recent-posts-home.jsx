@@ -3,75 +3,90 @@ import getTrendingPosts from "../utils/get-trending-posts";
 import Card, { SecondaryCard } from "./card";
 import { unstable_noStore as noStore } from "next/cache";
 
+/**
+ * @typedef {import("react")} React
+ */
+
+/**
+ * UI for displaying recent posts on the Home page
+ * @returns {React.JSX.Element}
+ */
 export async function RecentPosts() {
-  // Do not remove!
-  noStore();
+	// Stops component from being cached
+	noStore();
 
-  try {
-    const recentPosts = await getRecentPosts(3);
+	try {
+		const recentPosts = await getRecentPosts(3);
 
-    return recentPosts.length > 0 ? (
-      <div className="mx-auto grid max-w-5xl grid-cols-1 gap-12 py-12 sm:grid-cols-2 lg:grid-cols-3">
-        {recentPosts.map((post, index) => (
-          <Card key={index} {...post._doc} />
-        ))}
-      </div>
-    ) : (
-      <div className="flex justify-center text-center items-center text-sm text-zinc-600 min-h-44">
-        <p>No posts to show!</p>
-      </div>
-    );
-  } catch (error) {
-    return (
-      <div className="flex justify-center text-center items-center text-sm text-red-600 min-h-[180px] p-4">
-        <a
-          href="/"
-          className="min-w-[150px] h-10 w-10 flex justify-center bg-red-100 border-red-200 rounded-xl items-center"
-        >
-          Failed to load posts!
-        </a>
-      </div>
-    );
-  }
+		return recentPosts.length > 0 ? (
+			<div className="mx-auto grid max-w-5xl grid-cols-1 gap-12 py-12 sm:grid-cols-2 lg:grid-cols-3">
+				{recentPosts.map((post, index) => (
+					<Card key={index} {...post._doc} />
+				))}
+			</div>
+		) : (
+			<div className="flex justify-center text-center items-center text-sm text-zinc-600 min-h-44">
+				<p>No posts to show!</p>
+			</div>
+		);
+	} catch (error) {
+		return (
+			<div className="flex justify-center text-center items-center text-sm text-red-600 min-h-[180px] p-4">
+				<a
+					href="/"
+					className="min-w-[150px] h-10 w-10 flex justify-center bg-red-100 border-red-200 rounded-xl items-center">
+					Failed to load posts!
+				</a>
+			</div>
+		);
+	}
 }
 
+/**
+ * UI for displaying most popular posts on the Home page.
+ * @returns {React.JSX.Element}
+ */
 export async function FeaturePosts() {
-  noStore();
+	// Stops the component from being cached
+	noStore();
 
-  try {
-    const recentPosts = await getTrendingPosts(3);
+	try {
+		const recentPosts = await getTrendingPosts(3);
 
-    return recentPosts.length > 0 ? (
-      <div className="mx-auto grid max-w-5xl grid-cols-1 gap-12 py-12 sm:grid-cols-2 lg:grid-cols-3">
-        {recentPosts.map((post, index) => (
-          <SecondaryCard key={index} {...post._doc} />
-        ))}
-      </div>
-    ) : (
-      <div className="flex justify-center text-center items-center text-sm text-zinc-600 min-h-44">
-        <p>No posts to show!</p>
-      </div>
-    );
-  } catch (error) {
-    return (
-      <div className="flex justify-center text-center items-center text-sm text-red-600 min-h-[180px] p-4">
-        <a
-          href="/"
-          className="min-w-[150px] h-10 w-10 flex justify-center bg-red-100 border-red-200 rounded-xl items-center"
-        >
-          Failed to load posts!
-        </a>
-      </div>
-    );
-  }
+		return recentPosts.length > 0 ? (
+			<div className="mx-auto grid max-w-5xl grid-cols-1 gap-12 py-12 sm:grid-cols-2 lg:grid-cols-3">
+				{recentPosts.map((post, index) => (
+					<SecondaryCard key={index} {...post._doc} />
+				))}
+			</div>
+		) : (
+			<div className="flex justify-center text-center items-center text-sm text-zinc-600 min-h-44">
+				<p>No posts to show!</p>
+			</div>
+		);
+	} catch (error) {
+		return (
+			<div className="flex justify-center text-center items-center text-sm text-red-600 min-h-[180px] p-4">
+				<a
+					href="/"
+					className="min-w-[150px] h-10 w-10 flex justify-center bg-red-100 border-red-200 rounded-xl items-center">
+					Failed to load posts!
+				</a>
+			</div>
+		);
+	}
 }
 
+/**
+ * Optimistic UI shown before posts are completely loaded.
+ * @returns {React.JSX.Element}
+ */
 export function PostOptimisticUi() {
-  return (
-    <div className="mx-auto grid max-w-5xl grid-cols-1 gap-12 py-12 sm:grid-cols-2 lg:grid-cols-3 animate-pulse">
-      <div className="h-[180px] w-full rounded-xl bg-gradient-to-tr from-zinc-200 to-zinc-50"></div>
-      <div className="h-[180px] w-full rounded-xl bg-gradient-to-tr from-zinc-200 to-zinc-50"></div>
-      <div className="h-[180px] w-full rounded-xl bg-gradient-to-tr from-zinc-200 to-zinc-50"></div>
-    </div>
-  );
+	return (
+		<div className="mx-auto grid max-w-5xl grid-cols-1 gap-12 py-12 sm:grid-cols-2 lg:grid-cols-3 animate-pulse">
+			<div className="h-[180px] w-full rounded-xl bg-gradient-to-tr from-zinc-200 to-zinc-50"></div>
+			<div className="h-[180px] w-full rounded-xl bg-gradient-to-tr from-zinc-200 to-zinc-50"></div>
+			<div className="h-[180px] w-full rounded-xl bg-gradient-to-tr from-zinc-200 to-zinc-50"></div>
+		</div>
+	);
 }

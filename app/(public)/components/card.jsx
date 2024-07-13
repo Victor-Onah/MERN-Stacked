@@ -1,5 +1,9 @@
 import Link from "next/link";
 
+/**
+ * @typedef {import("react")} React
+ */
+
 const months = [
 	"January",
 	"February",
@@ -15,6 +19,11 @@ const months = [
 	"December"
 ];
 
+/**
+ * Secondary blog post card. Does not include publish date or last updated date.
+ * @param {{slug: string, featuredImageUrl: string, title: string, summary: string}} props
+ * @returns {React.JSX.Element}
+ */
 export function SecondaryCard(props) {
 	return (
 		<Link
@@ -41,6 +50,11 @@ export function SecondaryCard(props) {
 	);
 }
 
+/**
+ * Primary blog post card. Includes publish date or last updated date.
+ * @param {{slug: string, featuredImageUrl: string, title: string, publishDate: number, lastUpdated?: number}} props
+ * @returns {React.JSX.Element}
+ */
 export default function Card(props) {
 	const date = new Date(props.lastUpdated || props.publishDate);
 	const day = date.getDate();

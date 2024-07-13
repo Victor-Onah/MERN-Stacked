@@ -12,7 +12,7 @@ export const metadata = {
 /**
  *
  * @param {import("react").PropsWithChildren} props
- * @returns {JSX.Element}
+ * @returns {import("react").JSX.Element}
  */
 export default function RootLayout({ children }) {
 	return (

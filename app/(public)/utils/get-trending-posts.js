@@ -3,15 +3,22 @@
 import connectToDb from "../../../shared/utils/connect-to-db";
 import Post from "../../../shared/models/post";
 
-export default async function getTrendingPosts(limit) {
-  try {
-    await connectToDb();
+/**
+ * Retrieves the most popular posts on the database by `impressions`
+ * @param {number} limit Number of posts to retrieve. Defaults to 6
+ * @returns {Promise<Array<{} & {_doc: {slug: string, featuredImageUrl: string, title: string, publishDate: number, lastUpdated?: number}}>>}
+ */
+export default async function getTrendingPosts(limit = 6) {
+	try {
+		await connectToDb();
 
-    return await Post.find()
-      .sort({ impressions: -1 })
-      .select("title summary featuredImageUrl publishDate lastModified slug")
-      .limit(limit || 6);
-  } catch (error) {
-    return [];
-  }
+		return await Post.find()
+			.sort({ impressions: -1 })
+			.select(
+				"title summary featuredImageUrl publishDate lastModified slug"
+			)
+			.limit(limit);
+	} catch (error) {
+		return [];
+	}
 }

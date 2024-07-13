@@ -3,15 +3,20 @@
 import Message from "../../../shared/models/message";
 import connectToDb from "../../../shared/utils/connect-to-db";
 
+/**
+ * Saves the user's contact message to the database
+ * @param {FormData<string, string>} msgFormData - The message to be sent in formData format
+ * @returns {Promise<{status: 'successful' | 'failed', message: string}>}
+ */
 export default async function sendMessage(msgFormData) {
-  try {
-    const msgObj = Object.fromEntries(msgFormData);
+	try {
+		const msgObj = Object.fromEntries(msgFormData);
 
-    await connectToDb();
-    await Message.create(msgObj);
+		await connectToDb();
+		await Message.create(msgObj);
 
-    return { status: "successful" };
-  } catch (error) {
-    return { status: "failed", message: error.message };
-  }
+		return { status: "successful" };
+	} catch (error) {
+		return { status: "failed", message: error.message };
+	}
 }

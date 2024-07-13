@@ -2,7 +2,7 @@ import { useFormStatus } from "react-dom";
 
 /**
  * Save button for saving edited posts
- * @returns {import('react').JSX}
+ * @returns {JSX}
  */
 export default function SaveBtn() {
 	const { pending } = useFormStatus();

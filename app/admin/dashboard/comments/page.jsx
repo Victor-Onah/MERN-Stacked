@@ -1,6 +1,6 @@
 /**
  * Page for `/admin/dashboard/comments`.
- * @returns {import('react').JSX.Element}
+ * @returns {import("react").JSX.Element}
  */
 export default function Page() {
 	return (
