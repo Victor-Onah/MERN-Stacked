@@ -66,7 +66,7 @@ export default function Page() {
 								{
 									content,
 									featuredImageUrl,
-									keywords,
+									keywords: keywords.toString(),
 									slug: title
 										.toLowerCase()
 										.replaceAll(/[\s]/g, "-")
