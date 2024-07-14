@@ -8,10 +8,9 @@ import { unstable_noStore as noStore } from "next/cache";
 
 /**
  * Generates metadata for page `/blog`.
- * @param {{searchParams: {id: string}}} args
- * @returns {Metadata}
+ * @returns {Promise<Metadata>}
  */
-export async function generateMetadata({ searchParams }) {
+export async function generateMetadata() {
 	return {
 		title: "MERN Stacked | Blog",
 		description:
@@ -19,16 +18,19 @@ export async function generateMetadata({ searchParams }) {
 		openGraph: {
 			title: "MERN Stacked | Blog",
 			description:
-				"Dive into the latest trends, insights, and best practices across a variety of web development topics based on the MERN stack and more."
+				"Dive into the latest trends, insights, and best practices across a variety of web development topics based on the MERN stack and more.",
+			images: ["/images/social-media-banner.png"]
 		},
 		twitter: {
 			title: "MERN Stacked | Blog",
 			description:
-				"Dive into the latest trends, insights, and best practices across a variety of web development topics based on the MERN stack and more."
+				"Dive into the latest trends, insights, and best practices across a variety of web development topics based on the MERN stack and more.",
+			images: ["/images/social-media-banner.png"]
 		}
 	};
 }
 
+/** Page for `/blog` */
 export default function Page() {
 	// Stops page from being cached
 	noStore();

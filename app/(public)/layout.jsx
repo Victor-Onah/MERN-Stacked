@@ -17,12 +17,14 @@ export const metadata = {
 	openGraph: {
 		title: "MERN Stacked - Exploring the MERN Stack and more",
 		description:
-			"Buckle up for a head-first dive into the MERN Stack. Join Onah Victor as he shares his knowledge and experiences through insightful articles."
+			"Buckle up for a head-first dive into the MERN Stack. Join Onah Victor as he shares his knowledge and experiences through insightful articles.",
+		images: ["/images/social-media-banner.png"]
 	},
 	twitter: {
 		title: "MERN Stacked - Exploring the MERN Stack and more",
 		description:
-			"Buckle up for a head-first dive into the MERN Stack. Join Onah Victor as he shares his knowledge and experiences through insightful articles."
+			"Buckle up for a head-first dive into the MERN Stack. Join Onah Victor as he shares his knowledge and experiences through insightful articles.",
+		images: ["/images/social-media-banner.png"]
 	},
 	metadataBase: new URL(process.env.METADATA_BASE || "http://localhost:3000")
 };

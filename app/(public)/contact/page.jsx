@@ -5,9 +5,8 @@ import ContactForm from "./components/contact-form";
  */
 
 /**
- * Generate dynamic metadata for each blog post.
- * @param {{params: {slug: string}}} args
- * @returns {Metadata} - Object containing the metadata of the current blog post.
+ * Generate dynamic metadata for the contact page.
+ * @returns {Promise<Metadata>}
  */
 export async function generateMetadata() {
 	return {
@@ -17,12 +16,14 @@ export async function generateMetadata() {
 		openGraph: {
 			title: "MERN Stacked | Contact",
 			description:
-				"Have a question or want to work together? Fill out the form below and I'll get back to you as soon as possible."
+				"Have a question or want to work together? Fill out the form below and I'll get back to you as soon as possible.",
+			images: ["/images/social-media-banner.png"]
 		},
 		twitter: {
 			title: "MERN Stacked | Contact",
 			description:
-				"Have a question or want to work together? Fill out the form below and I'll get back to you as soon as possible."
+				"Have a question or want to work together? Fill out the form below and I'll get back to you as soon as possible.",
+			images: ["/images/social-media-banner.png"]
 		}
 	};
 }

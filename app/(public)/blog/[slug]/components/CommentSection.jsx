@@ -20,7 +20,7 @@ export default function CommentSection({ comments }) {
 						<div className="space-y-2">
 							<label
 								className="text-sm font-medium leading-none"
-								for="name">
+								htmlFor="name">
 								Name
 							</label>
 							<input
@@ -32,7 +32,7 @@ export default function CommentSection({ comments }) {
 						<div className="space-y-2">
 							<label
 								className="text-sm font-medium leading-none"
-								for="email">
+								htmlFor="email">
 								Email
 							</label>
 							<input
@@ -46,7 +46,7 @@ export default function CommentSection({ comments }) {
 					<div className="space-y-2">
 						<label
 							className="text-sm font-medium leading-none"
-							for="comment">
+							htmlFor="comment">
 							Comment
 						</label>
 						<textarea

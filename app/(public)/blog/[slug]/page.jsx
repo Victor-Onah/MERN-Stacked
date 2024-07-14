@@ -10,7 +10,7 @@ import CommentSection from "./components/CommentSection";
 /**
  * Generate dynamic metadata for each blog post.
  * @param {{params: {slug: string}}} args
- * @returns {Metadata} - Object containing the metadata of the current blog post.
+ * @returns {Promise<Metadata>}
  */
 export async function generateMetadata({ params }) {
 	const { slug } = params;

@@ -3,9 +3,8 @@
  */
 
 /**
- * Generate dynamic metadata for each blog post.
- * @param {{params: {slug: string}}} args
- * @returns {Metadata} - Object containing the metadata of the current blog post.
+ * Generate metadata for privacy page.
+ * @returns {Promise<Metadata>}
  */
 export async function generateMetadata() {
 	return {
@@ -15,12 +14,14 @@ export async function generateMetadata() {
 		openGraph: {
 			title: "MERN Stacked | Privacy Policy",
 			description:
-				"This policy outlines the types of personal information we may collect and how we use it."
+				"This policy outlines the types of personal information we may collect and how we use it.",
+			images: ["/images/social-media-banner.png"]
 		},
 		twitter: {
 			title: "MERN Stacked | Privacy Policy",
 			description:
-				"This policy outlines the types of personal information we may collect and how we use it."
+				"This policy outlines the types of personal information we may collect and how we use it.",
+			images: ["/images/social-media-banner.png"]
 		}
 	};
 }
