@@ -1,5 +1,6 @@
 import Footer from "./components/footer";
 import Header from "./components/header";
+import { Analytics } from "@vercel/analytics";
 import "../shared/globals.css";
 
 /**
@@ -38,6 +39,7 @@ export default function RootLayout({ children }) {
 				<Header />
 				{children}
 				<Footer />
+				<Analytics />
 			</body>
 		</html>
 	);
