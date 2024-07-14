@@ -1,6 +1,6 @@
 import Footer from "./components/footer";
 import Header from "./components/header";
-import { Analytics } from "@vercel/analytics";
+import { Analytics } from "@vercel/analytics/react";
 import "../shared/globals.css";
 
 /**
