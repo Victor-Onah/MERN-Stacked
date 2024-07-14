@@ -1,5 +1,5 @@
-import getRecentPosts from "../utils/get-recent-posts";
-import Card from "./card";
+import getRecentPosts from "../../utils/get-recent-posts";
+import Card from "../../components/card";
 import { unstable_noStore as noStore } from "next/cache";
 
 /**

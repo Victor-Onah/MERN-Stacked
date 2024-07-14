@@ -4,7 +4,7 @@ import "@uiw/react-md-editor/markdown-editor.css";
 import "@uiw/react-markdown-preview/markdown.css";
 import MDEditor from "@uiw/react-md-editor";
 import { useState, useLayoutEffect } from "react";
-import fetchPost from "../../../../../shared/utils/fetch-post";
+import fetchPost from "../../../../../(public)/blog/[slug]/utils/fetch-post";
 import Keywords from "../../components/keywords";
 import SaveBtn from "./components/save-button";
 import save from "./utils/save-post";

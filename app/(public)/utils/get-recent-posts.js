@@ -1,7 +1,7 @@
 "use server";
 
-import connectToDb from "../../../shared/utils/connect-to-db";
-import Post from "../../../shared/models/post";
+import connectToDb from "../../../utils/connect-to-db";
+import Post from "../../../models/post";
 
 /**
  * Retrieves the most recent posts on the database by `publishDate`

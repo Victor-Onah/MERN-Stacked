@@ -37,6 +37,10 @@ const postSchema = new mongoose.Schema({
 	impressions: {
 		type: Number,
 		default: 0
+	},
+	comments: {
+		type: [String],
+		default: []
 	}
 });
 

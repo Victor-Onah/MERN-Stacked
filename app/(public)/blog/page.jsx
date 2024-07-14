@@ -1,4 +1,4 @@
-import BlogPosts, { BlogPostsOptimisticUi } from "../components/blog-posts";
+import BlogPosts, { BlogPostsOptimisticUi } from "./components/blog-posts";
 import { Suspense } from "react";
 import { unstable_noStore as noStore } from "next/cache";
 

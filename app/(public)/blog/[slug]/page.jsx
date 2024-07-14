@@ -1,6 +1,7 @@
-import Post from "@/shared/models/post";
-import connectToDb from "@/shared/utils/connect-to-db";
-import markdownToHtml from "@/app/shared/utils/markdown-to-html";
+import Post from "../../../../models/post";
+import connectToDb from "../../../../utils/connect-to-db";
+import markdownToHtml from "./utils/markdown-to-html";
+import CommentSection from "./components/CommentSection";
 
 /**
  * @typedef {import('next').Metadata} Metadata
@@ -43,12 +44,16 @@ export default async function Page({ params }) {
 	await connectToDb();
 	const post = await Post.findOne({ slug });
 	return (
-		<>
-			<div
-				className="blog-post"
-				dangerouslySetInnerHTML={{
-					__html: `${await markdownToHtml(post.content)}`
-				}}></div>
-		</>
+		<div className="max-w-screen-lg mx-auto">
+			<div className="p-4 space-y-8">
+				<div
+					className="blog-post"
+					dangerouslySetInnerHTML={{
+						__html: `${await markdownToHtml(post.content)}`
+					}}></div>
+				<hr />
+				<CommentSection slug={post.slug} comments={post.comments} />
+			</div>
+		</div>
 	);
 }

@@ -1,7 +1,7 @@
 "use server";
 
-import Post from "@/shared/models/post";
-import connectToDb from "@/shared/utils/connect-to-db";
+import Post from "../../../../../../models/post";
+import connectToDb from "../../../../../../utils/connect-to-db";
 
 /**
  * @typedef Post
