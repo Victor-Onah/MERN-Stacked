@@ -2,6 +2,7 @@ import Post from "../../../../models/post";
 import connectToDb from "../../../../utils/connect-to-db";
 import markdownToHtml from "./utils/markdown-to-html";
 import CommentSection from "./components/CommentSection";
+import Suggestions from "./components/Suggestions";
 
 /**
  * @typedef {import('next').Metadata} Metadata
@@ -44,16 +45,16 @@ export default async function Page({ params }) {
 	await connectToDb();
 	const post = await Post.findOne({ slug });
 	return (
-		<div className="max-w-screen-lg mx-auto">
-			<div className="p-4 space-y-8">
-				<div
-					className="blog-post"
-					dangerouslySetInnerHTML={{
-						__html: `${await markdownToHtml(post.content)}`
-					}}></div>
-				<hr />
-				<CommentSection slug={post.slug} comments={post.comments} />
-			</div>
+		<div className="space-y-8">
+			<div
+				className="blog-post"
+				dangerouslySetInnerHTML={{
+					__html: `${await markdownToHtml(post.content)}`
+				}}></div>
+			<hr />
+			<CommentSection slug={post.slug} comments={post.comments} />
+			<hr />
+			<Suggestions slug={post.slug} />
 		</div>
 	);
 }
