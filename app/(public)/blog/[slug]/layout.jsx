@@ -17,7 +17,7 @@ export default function Layout({ children }) {
 	return (
 		<div className="max-[960px]:bg-white bg-zinc-100">
 			<div className="max-w-screen-lg mx-auto p-4 flex gap-2 max-[960px]:flex-col max-[960px]:p-0">
-				<main className="flex-1 max-w-2xl mx-auto p-4 bg-white rounded-lg shadow-sm max-[960px]:w-full max-[960px]:rounded-none max-[960px]:shadow-none">
+				<main className="flex-1 max-w-2xl mx-auto p-4 bg-white rounded-lg min-w-[640px] max-[960px]:min-w-0 shadow-sm max-[960px]:w-full max-[960px]:rounded-none max-[960px]:shadow-none">
 					<Suspense fallback={<OptimisticUi />}>{children}</Suspense>
 				</main>
 				<aside className="flex-1 p-4 max-w-2xl mx-auto bg-white rounded-lg shadow-sm min-h-[320px] h-fit  max-[960px]:w-full max-[960px]:rounded-none max-[960px]:shadow-none">

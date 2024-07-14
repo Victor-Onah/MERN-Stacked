@@ -47,7 +47,7 @@ async function SuggestedPosts({ slug }) {
 		})();
 	}, [slug]);
 	return (
-		<div className="">
+		<div>
 			{loaded && suggestions.length === 0 && (
 				<p className="text-sm text-center">No suggestions</p>
 			)}
@@ -56,25 +56,29 @@ async function SuggestedPosts({ slug }) {
 					Error loading suggestions
 				</p>
 			)}
-			{suggestions.length > 0 &&
-				suggestions.map((suggestion, index) => (
-					<Link
-						key={index}
-						href={`/blog/${suggestion.slug}`}
-						className="flex items-center gap-4">
-						<img
-							src={suggestion.featuredImageUrl}
-							alt={suggestion.title}
-							className="w-32 aspect-video rounded-xl inline-block placeholder:text-xs"
-						/>
-						<div>
-							<p className="font-semibold">{suggestion.title}</p>
-							<p className="text-sm text-zinc-600 line-clamp-1">
-								{suggestion.summary}
-							</p>
-						</div>
-					</Link>
-				))}
+			<div className="space-y-4">
+				{suggestions.length > 0 &&
+					suggestions.map((suggestion, index) => (
+						<Link
+							key={index}
+							href={`/blog/${suggestion.slug}`}
+							className="flex items-center gap-4">
+							<img
+								src={suggestion.featuredImageUrl}
+								alt={suggestion.title}
+								className="w-32 aspect-video rounded-xl inline-block placeholder:text-xs"
+							/>
+							<div>
+								<p className="font-semibold">
+									{suggestion.title}
+								</p>
+								<p className="text-sm text-zinc-600 line-clamp-1">
+									{suggestion.summary}
+								</p>
+							</div>
+						</Link>
+					))}
+			</div>
 		</div>
 	);
 }
