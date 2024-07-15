@@ -29,10 +29,7 @@ export async function GET(request) {
 	const lastPostPublishDate = posts[posts.length - 1].publishDate;
 	const firstPostPublishDate = posts[0].publishDate;
 	const finalXml = `<?xml version="1.0" encoding="UTF-8"?>
-                <urlset xmlns="http://www.sitemaps.org/schemas/sitemap-image/1.1"
-                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap-image/1.1
-                        http://www.sitemaps.org/schemas/sitemap-image/1.1/sitemap-image.xsd">
+                <urlset xmlns="http://www.sitemaps.org/schemas/sitemap-image/1.1">
                     <url>
                         <loc>${process.env.METADATA_BASE}</loc>
                         <lastmod>${formatDateToYYYYMMDD(
