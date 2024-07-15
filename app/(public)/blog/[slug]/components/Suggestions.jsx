@@ -63,6 +63,7 @@ async function SuggestedPosts({ slug }) {
 							href={`/blog/${suggestion.slug}`}
 							className="flex items-center gap-4">
 							<img
+								loading="lazy"
 								src={suggestion.featuredImageUrl}
 								alt={suggestion.title}
 								className="w-32 aspect-video rounded-xl inline-block placeholder:text-xs"

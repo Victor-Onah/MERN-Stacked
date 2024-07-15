@@ -1,5 +1,10 @@
 "use client";
 
+import { useState } from "react";
+import sanitizeInput from "../utils/sanitize-input";
+import searchForPost from "../utils/search";
+import Link from "next/link";
+
 /**
  * @typedef {import('react')} React
  */
@@ -66,6 +71,11 @@ export default function Search() {
  * @returns {React.JSX.Element}
  */
 function SearchDialogue() {
+	const [query, setQuery] = useState("");
+	const [searching, setSearching] = useState(false);
+	const [searchError, setSearchError] = useState(false);
+	const [results, setResults] = useState();
+
 	return (
 		<dialog
 			onClose={() => (document.body.style.overflow = "auto")}
@@ -74,14 +84,39 @@ function SearchDialogue() {
 			aria-modal="true"
 			className="fixed inset-0 bg-white w-full max-md:max-w-[95vw] max-w-screen-md rounded-lg max-h-[80vh] min-h-48 overflow-x-hidden">
 			<div className="flex sticky top-0 w-full border-b items-stretch">
-				<input
-					type="search"
-					name="Search"
-					placeholder="Search..."
-					className="border-none outline-none flex-1 p-2"
-				/>
+				<form
+					className="flex flex-1"
+					onSubmit={async e => {
+						e.preventDefault();
+						try {
+							setSearchError(false);
+							setSearching(true);
+							setResults(
+								await searchForPost(await sanitizeInput(query))
+							);
+							setSearching(false);
+						} catch (error) {
+							setSearching(false);
+							setSearchError(true);
+						}
+					}}>
+					<input
+						value={query}
+						onChange={({ target }) => setQuery(target.value)}
+						type="search"
+						name="Search"
+						placeholder="Search..."
+						className="border-none outline-none flex-1 p-2"
+					/>
+				</form>
 				<button
-					onClick={closeSearchModal}
+					onClick={() => {
+						closeSearchModal();
+						setResults();
+						setQuery("");
+						setSearchError(false);
+						setSearching(false);
+					}}
 					title="Close"
 					aria-label="Close search modal"
 					className="flex p-2 justify-center items-center bg-zinc-100 active:bg-zinc-200">
@@ -96,7 +131,44 @@ function SearchDialogue() {
 				</button>
 			</div>
 			<div className="text-center text-zinc-700 p-4">
-				Search for something!
+				{searching && !searchError && !results && "Searching..."}
+				{!searching && !results && "Search for something"}
+				{searchError && "Failed to complete request."}
+				{Array.isArray(results) &&
+					results.length === 0 &&
+					"No results for this search."}
+				{Array.isArray(results) && results.length > 0 && (
+					<div className="space-y-4">
+						{results.length > 0 &&
+							results.map((suggestion, index) => (
+								<Link
+									onClick={() => {
+										setResults();
+										setQuery("");
+										setSearchError(false);
+										setSearching(false);
+									}}
+									key={index}
+									href={`/blog/${suggestion.slug}`}
+									className="flex items-center gap-4 text-left">
+									<img
+										loading="lazy"
+										src={suggestion.featuredImageUrl}
+										alt={suggestion.title}
+										className="w-32 aspect-video rounded-xl inline-block placeholder:text-xs"
+									/>
+									<div>
+										<p className="font-semibold">
+											{suggestion.title}
+										</p>
+										<p className="text-sm text-zinc-600 line-clamp-1">
+											{suggestion.summary}
+										</p>
+									</div>
+								</Link>
+							))}
+					</div>
+				)}
 			</div>
 		</dialog>
 	);

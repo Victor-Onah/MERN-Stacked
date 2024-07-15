@@ -2,6 +2,7 @@
 
 import Post from "../../../../../../models/post";
 import connectToDb from "../../../../../../utils/connect-to-db";
+import searcher from "@/utils/search";
 
 /**
  * @typedef Post
@@ -28,6 +29,7 @@ export default async function publishPost(postInfo) {
 
 		await connectToDb();
 		await Post.create(post);
+		searcher.emit("db_updated");
 
 		return true;
 	} catch (error) {

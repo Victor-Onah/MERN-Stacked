@@ -2,6 +2,7 @@
 
 import connectToDb from "@/utils/connect-to-db";
 import Post from "@/models/post";
+import searcher from "@/utils/search";
 
 /**
  * @typedef Post
@@ -29,6 +30,7 @@ export default async function savePost(post) {
 
 		await connectToDb();
 		await Post.findOneAndUpdate({ slug: post.slug }, editedPost);
+		searcher.emit("db_updated");
 
 		return true;
 	} catch (error) {
