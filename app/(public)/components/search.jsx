@@ -142,7 +142,9 @@ function SearchDialogue() {
 						{results.length > 0 &&
 							results.map((suggestion, index) => (
 								<Link
+									preload
 									onClick={() => {
+										closeSearchModal();
 										setResults();
 										setQuery("");
 										setSearchError(false);
@@ -155,7 +157,7 @@ function SearchDialogue() {
 										loading="lazy"
 										src={suggestion.featuredImageUrl}
 										alt={suggestion.title}
-										className="w-32 aspect-video rounded-xl inline-block placeholder:text-xs"
+										className="[&[alt]]:text-xs w-32 aspect-video rounded-xl inline-block"
 									/>
 									<div>
 										<p className="font-semibold">

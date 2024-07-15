@@ -59,6 +59,7 @@ async function SuggestedPosts({ slug }) {
 				{suggestions.length > 0 &&
 					suggestions.map((suggestion, index) => (
 						<Link
+							preload
 							key={index}
 							href={`/blog/${suggestion.slug}`}
 							className="flex items-center gap-4">
@@ -66,7 +67,7 @@ async function SuggestedPosts({ slug }) {
 								loading="lazy"
 								src={suggestion.featuredImageUrl}
 								alt={suggestion.title}
-								className="w-32 aspect-video rounded-xl inline-block placeholder:text-xs"
+								className="[&[alt]]:text-xs w-32 aspect-video rounded-xl inline-block"
 							/>
 							<div>
 								<p className="font-semibold">

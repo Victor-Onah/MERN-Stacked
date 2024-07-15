@@ -35,9 +35,6 @@ export default function Footer() {
 				<Link className="hover:underline" href="/privacy">
 					Privacy
 				</Link>
-				<Link className="hover:underline" href="/archive">
-					Archive
-				</Link>
 			</div>
 		</footer>
 	);

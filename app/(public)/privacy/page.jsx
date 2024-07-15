@@ -49,19 +49,10 @@ export default function Page() {
 						<ul className="list-disc pl-6 space-y-2 mt-4">
 							<li>Name</li>
 							<li>Email address</li>
-							<li>Avatar image</li>
 						</ul>
-						<blockquote
-							style={{
-								borderLeft: "4px solid #4a90e2",
-								backgroundColor: "#f7f7f7",
-								color: "#555",
-								padding: "10px 20px",
-								margin: "10px 0",
-								fontSize: "0.9em"
-							}}>
-							All these information will only be collected if you
-							willingly sign in using your Google account.
+						<blockquote className="border-l-4 border-l-zinc-400 text-zinc-600 ml-2 my-4 px-4 py-2 bg-zinc-100 text-sm">
+							All these information will only be collected when
+							you want to comment on a post.
 						</blockquote>
 					</div>
 					<div>
