@@ -20,7 +20,7 @@ export default function Layout({ children }) {
 				<main className="flex-1 max-w-2xl mx-auto p-4 bg-white rounded-lg min-w-[640px] max-[960px]:min-w-0 shadow-sm max-[960px]:w-full max-[960px]:rounded-none max-[960px]:shadow-none">
 					<Suspense fallback={<OptimisticUi />}>{children}</Suspense>
 				</main>
-				<aside className="flex-1 p-4 max-w-2xl mx-auto bg-white rounded-lg shadow-sm min-h-[320px] h-fit  max-[960px]:w-full max-[960px]:rounded-none max-[960px]:shadow-none">
+				<aside className="flex-1 p-4 max-w-2xl mx-auto bg-white rounded-lg shadow-sm min-h-[100px] h-fit  max-[960px]:w-full max-[960px]:rounded-none max-[960px]:shadow-none min-[960px]:sticky min-[960px]:min-h-[70vh] top-20">
 					<h4 className="text-xs text-center">Advertisements</h4>
 				</aside>
 			</div>

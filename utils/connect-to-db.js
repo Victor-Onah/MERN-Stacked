@@ -12,6 +12,5 @@ export default async function connectToDb() {
 			? "mongodb://localhost:27017"
 			: process.env.MONGO_URL;
 		await mongoose.connect(connectionString);
-		console.log("Connected to DB successfully!");
 	}
 }

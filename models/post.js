@@ -39,7 +39,14 @@ const postSchema = new mongoose.Schema({
 		default: 0
 	},
 	comments: {
-		type: [String],
+		type: [
+			{
+				author: String,
+				publishDate: Number,
+				body: String,
+				authorEmail: String
+			}
+		],
 		default: []
 	}
 });

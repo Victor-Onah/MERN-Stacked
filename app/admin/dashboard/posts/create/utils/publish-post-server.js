@@ -31,7 +31,6 @@ export default async function publishPost(postInfo) {
 
 		return true;
 	} catch (error) {
-		console.error(error);
 		return false;
 	}
 }

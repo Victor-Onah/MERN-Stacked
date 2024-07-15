@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import db from "../utils/db.js";
-import sanitize from "../utils/sanitize-input.js";
+import sanitize from "../app/(public)/utils/sanitize-input.js";
 
 /**
  * Schema for messages.
@@ -44,9 +44,9 @@ const messageSchema = new mongoose.Schema({
 messageSchema.pre("save", async function (next) {
 	try {
 		this.sendDate = Date.now();
-		this.name = sanitize(this.name);
-		this.email = sanitize(this.email);
-		this.body = sanitize(this.body);
+		this.name = await sanitize(this.name);
+		this.email = await sanitize(this.email);
+		this.body = await sanitize(this.body);
 	} catch (error) {
 		next(error);
 	}

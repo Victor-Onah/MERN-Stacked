@@ -32,7 +32,6 @@ export default async function savePost(post) {
 
 		return true;
 	} catch (error) {
-		console.error(error);
 		return false;
 	}
 }

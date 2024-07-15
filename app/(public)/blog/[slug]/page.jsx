@@ -15,13 +15,14 @@ import Suggestions from "./components/Suggestions";
  */
 export async function generateMetadata({ params }) {
 	const { slug } = params;
-	const { title, summary, featuredImageUrl } = await Post.findOne({
+	const { keywords, title, summary, featuredImageUrl } = await Post.findOne({
 		slug
-	}).select("title summary featuredImageUrl");
+	}).select("title summary featuredImageUrl comments keywords");
 
 	return {
 		title,
 		description: summary,
+		keywords: keywords.split(","),
 		openGraph: {
 			title,
 			description: summary,
@@ -42,8 +43,11 @@ export async function generateMetadata({ params }) {
  */
 export default async function Page({ params }) {
 	const { slug } = params;
+
 	await connectToDb();
-	const post = await Post.findOne({ slug });
+
+	const post = (await Post.findOne({ slug })).toJSON();
+
 	return (
 		<div className="space-y-8">
 			<div
@@ -52,9 +56,9 @@ export default async function Page({ params }) {
 					__html: `${await markdownToHtml(post.content)}`
 				}}></div>
 			<hr />
-			<CommentSection slug={post.slug} comments={post.comments} />
+			<CommentSection slug={slug} comments={post.comments} />
 			<hr />
-			<Suggestions slug={post.slug} />
+			<Suggestions slug={slug} />
 		</div>
 	);
 }

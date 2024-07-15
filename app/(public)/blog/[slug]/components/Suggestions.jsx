@@ -16,7 +16,7 @@ import Link from "next/link";
 export default function Suggestions({ slug }) {
 	return (
 		<div>
-			<h2 className="text-xl font-bold mb-4">More reads</h2>
+			<h3 className="text-2xl font-bold mb-4">More reads</h3>
 			<Suspense fallback={<OptimisticUi />}>
 				<SuggestedPosts slug={slug} />
 			</Suspense>
@@ -41,7 +41,6 @@ async function SuggestedPosts({ slug }) {
 				setSuggestions(await getRandomSuggestions(undefined, slug));
 				setLoaded(true);
 			} catch (error) {
-				console.error(error);
 				setLoaded(false);
 			}
 		})();
