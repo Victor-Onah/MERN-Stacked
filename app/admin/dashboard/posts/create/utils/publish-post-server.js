@@ -29,7 +29,7 @@ export default async function publishPost(postInfo) {
 
 		await connectToDb();
 		await Post.create(post);
-		searcher.emit("db_updated");
+		searcher.emit("db_updated", searcher);
 
 		return true;
 	} catch (error) {

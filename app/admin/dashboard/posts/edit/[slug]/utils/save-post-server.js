@@ -30,7 +30,7 @@ export default async function savePost(post) {
 
 		await connectToDb();
 		await Post.findOneAndUpdate({ slug: post.slug }, editedPost);
-		searcher.emit("db_updated");
+		searcher.emit("db_updated", searcher);
 
 		return true;
 	} catch (error) {
