@@ -17,7 +17,7 @@ export async function GET(request) {
 
 	for (let post of posts) {
 		xml += `<url>
-                    <loc>${process.env.METADATA_BASE}/${post.slug}</loc>
+                    <loc>${process.env.METADATA_BASE}blog/${post.slug}</loc>
                     <lastmod>${formatDateToYYYYMMDD(
 						new Date(post.lastUpdated || post.publishDate)
 					)}</lastmod>
@@ -42,7 +42,7 @@ export async function GET(request) {
                         <priority>1.0</priority>
                     </url>
                     <url>
-                        <loc>${process.env.METADATA_BASE}/about</loc>
+                        <loc>${process.env.METADATA_BASE}about</loc>
                         <lastmod>${formatDateToYYYYMMDD(
 							new Date(firstPostPublishDate)
 						)}</lastmod>
@@ -50,7 +50,7 @@ export async function GET(request) {
                         <priority>0.8</priority>
                     </url>
                     <url>
-                        <loc>${process.env.METADATA_BASE}/contact</loc>
+                        <loc>${process.env.METADATA_BASE}contact</loc>
                         <lastmod>${formatDateToYYYYMMDD(
 							new Date(firstPostPublishDate)
 						)}</lastmod>
@@ -58,7 +58,7 @@ export async function GET(request) {
                         <priority>0.8</priority>
                     </url>
                     <url>
-                        <loc>${process.env.METADATA_BASE}/privacy</loc>
+                        <loc>${process.env.METADATA_BASE}privacy</loc>
                         <lastmod>${formatDateToYYYYMMDD(
 							new Date(firstPostPublishDate)
 						)}</lastmod>
@@ -66,7 +66,7 @@ export async function GET(request) {
                         <priority>0.8</priority>
                     </url>
                     <url>
-                        <loc>${process.env.METADATA_BASE}/blog</loc>
+                        <loc>${process.env.METADATA_BASE}blog</loc>
                         <lastmod>${formatDateToYYYYMMDD(
 							new Date(lastPostPublishDate)
 						)}</lastmod>
