@@ -2,6 +2,7 @@ import Post from "../../../../models/post";
 import connectToDb from "../../../../utils/connect-to-db";
 import markdownToHtml from "./utils/markdown-to-html";
 import CommentSection from "./components/comment-section";
+import Suggestions from "./components/suggestions";
 
 /**
  * @typedef {import('next').Metadata} Metadata
@@ -64,7 +65,7 @@ export default async function Page({ params }) {
 			<hr />
 			<CommentSection slug={slug} comments={post.comments} />
 			<hr />
-			{/* <Suggestions slug={slug} /> */}
+			<Suggestions slug={slug} />
 		</div>
 	);
 }
