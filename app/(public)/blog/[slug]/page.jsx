@@ -9,7 +9,7 @@ import Suggestions from "./components/suggestions";
  */
 
 /**
- * Generate dynamic metadata for each blog post.
+ * Generate dynamic metadata for each blog post
  * @param {{params: {slug: string}}} args
  * @returns {Promise<Metadata>}
  */
