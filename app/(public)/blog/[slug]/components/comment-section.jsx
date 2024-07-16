@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useState } from "react";
+import { useState } from "react";
 import { useFormStatus } from "react-dom";
 import validateBeforeSubmit from "../utils/comments-form-validator";
 
