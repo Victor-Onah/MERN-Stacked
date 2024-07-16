@@ -1,8 +1,8 @@
 import Post from "../../../../models/post";
 import connectToDb from "../../../../utils/connect-to-db";
 import markdownToHtml from "./utils/markdown-to-html";
-import CommentSection from "./components/CommentSection";
-import Suggestions from "./components/Suggestions";
+import CommentSection from "./components/comment-section";
+import Suggestions from "./components/suggestions";
 
 /**
  * @typedef {import('next').Metadata} Metadata
@@ -15,9 +15,16 @@ import Suggestions from "./components/Suggestions";
  */
 export async function generateMetadata({ params }) {
 	const { slug } = params;
-	const { keywords, title, summary, featuredImageUrl } = await Post.findOne({
+	const post = await Post.findOne({
 		slug
-	}).select("title summary featuredImageUrl comments keywords");
+	}).select("title summary featuredImageUrl comments keywords impressions");
+	const { keywords, title, summary, featuredImageUrl, impressions } = post;
+
+	// Update post impressions
+	post.impressions
+		? (post.impressions = impressions + 1)
+		: (post.impressions = 1);
+	post.save();
 
 	return {
 		title,

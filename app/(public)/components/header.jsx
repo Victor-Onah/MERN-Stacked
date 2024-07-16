@@ -18,7 +18,7 @@ export default function Header() {
 			<Suspense fallback={null}>
 				<Loader />
 			</Suspense>
-			<header className="p-3 sticky top-0 w-full backdrop-blur-lg bg-white shadow-sm z-50 overflow-x-hidden">
+			<header className="py-3 px-4 md:px-6 lg:px-8 sticky top-0 w-full backdrop-blur-lg bg-white shadow-sm z-50 overflow-x-hidden">
 				<div className="justify-between max-w-screen-xl m-auto flex items-center">
 					<Link
 						href="/"
@@ -26,7 +26,14 @@ export default function Header() {
 						className="flex items-center justify-center"
 						prefetch>
 						<Logo className="h-6 w-6" />
-						<span className="sr-only">MERN Stacked</span>
+						<span
+							className="sr-only"
+							style={{
+								fontFamily: "Anek_Malayalam",
+								fontWeight: 600
+							}}>
+							MERN STACKED
+						</span>
 					</Link>
 					<Nav />
 				</div>
