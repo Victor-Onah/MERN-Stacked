@@ -2,7 +2,7 @@ import Post from "../../../../models/post";
 import connectToDb from "../../../../utils/connect-to-db";
 import markdownToHtml from "./utils/markdown-to-html";
 import CommentSection from "./components/comment-section";
-import Suggestions from "./components/suggestions";
+import Suggestions from "./components/suggestions.jsx";
 
 /**
  * @typedef {import('next').Metadata} Metadata
