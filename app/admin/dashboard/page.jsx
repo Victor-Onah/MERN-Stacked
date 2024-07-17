@@ -12,7 +12,7 @@ export default async function Page() {
 
 	await connectToDb();
 
-	const posts = await Post.find();
+	const posts = await Post.find().select("comments impressions title slug");
 	let totalImpressions = 0;
 	let totalCommentsCount = 0;
 
@@ -160,17 +160,21 @@ export default async function Page() {
 										</tr>
 									</thead>
 									<tbody className="[&amp;_tr:last-child]:border-0">
-										{posts.slice(0, 5).map(post => (
-											<tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
-												<td className="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 font-medium">
-													{post.title}
-												</td>
-												<td className="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">
-													{post.impressions}
-												</td>
-												<td className="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0"></td>
-											</tr>
-										))}
+										{posts
+											.slice(0, 5)
+											.map((post, index) => (
+												<tr
+													key={index}
+													className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+													<td className="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 font-medium">
+														{post.title}
+													</td>
+													<td className="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">
+														{post.impressions}
+													</td>
+													<td className="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0"></td>
+												</tr>
+											))}
 									</tbody>
 								</table>
 							</div>
