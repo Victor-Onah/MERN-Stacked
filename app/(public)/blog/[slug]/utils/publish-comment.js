@@ -1,9 +1,9 @@
 "use server";
 
-import connectToDb from "@/utils/connect-to-db";
 import Post from "@/models/post";
 import sanitizeInput from "@/app/(public)/utils/sanitize-input";
 import { revalidatePath } from "next/cache";
+import { connectToDb } from "@/utils/app-db";
 
 /**
  * Attaches users comments to blog post and saves to the database.

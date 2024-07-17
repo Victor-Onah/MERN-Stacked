@@ -1,7 +1,7 @@
 "use server";
 
-import connectToDb from "@/utils/connect-to-db";
 import Post from "@/models/post";
+import { connectToDb } from "@/utils/app-db";
 import searcher from "@/utils/search";
 
 /**

@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
-import db from "../utils/db.js";
 import sanitize from "../app/(public)/utils/sanitize-input.js";
+import { db } from "@/utils/app-db.js";
 
 /**
  * Schema for messages.

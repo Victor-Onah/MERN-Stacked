@@ -1,7 +1,7 @@
 "use server";
 
-import Message from "../../../../models/message";
-import connectToDb from "../../../../utils/connect-to-db";
+import Message from "@/models/message";
+import { connectToDb } from "@/utils/app-db";
 
 /**
  * Saves the user's contact message to the database

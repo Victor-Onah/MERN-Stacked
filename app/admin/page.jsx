@@ -50,7 +50,7 @@ export default function Page() {
 					)}
 					<div className="flex flex-col">
 						<label
-							htmlhtmlFor="username"
+							htmlFor="username"
 							className="text-sm font-semibold">
 							Username
 						</label>
@@ -64,7 +64,7 @@ export default function Page() {
 					</div>
 					<div className="flex flex-col">
 						<label
-							htmlhtmlFor="password"
+							htmlFor="password"
 							className="text-sm font-semibold">
 							Password
 						</label>
