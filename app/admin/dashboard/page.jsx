@@ -1,8 +1,28 @@
+import Post from "@/models/post";
+import connectToDb from "@/utils/connect-to-db";
+import { unstable_noStore as noStore } from "next/cache";
+
 /**
  * Page for path `/admin/dashboard`
  * @returns {import("react").JSX.Element}
  */
-export default function Page() {
+export default async function Page() {
+	// Disables caching of this page
+	noStore();
+
+	await connectToDb();
+
+	const posts = await Post.find();
+	let totalImpressions = 0;
+	let totalCommentsCount = 0;
+
+	for (let i = 0; i < posts.length; i++) {
+		const { comments, impressions } = posts[i];
+
+		comments && (totalCommentsCount += comments.length);
+		comments && (totalImpressions += impressions);
+	}
+
 	return (
 		<main className="grid flex-1 items-start gap-4 p-4 sm:px-6 py-9 md:gap-8">
 			<div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -27,13 +47,13 @@ export default function Page() {
 						</svg>
 					</div>
 					<div className="p-6">
-						<div className="text-2xl font-bold">124</div>
+						<div className="text-2xl font-bold">{posts.length}</div>
 					</div>
 				</div>
 				<div className="rounded-lg border bg-card text-card-foreground shadow-sm">
 					<div className="space-y-1.5 p-6 flex flex-row items-center justify-between pb-2">
 						<h3 className="whitespace-nowrap tracking-tight text-sm font-medium">
-							Total Views
+							Total Impressions
 						</h3>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +71,9 @@ export default function Page() {
 						</svg>
 					</div>
 					<div className="p-6">
-						<div className="text-2xl font-bold">12,345</div>
+						<div className="text-2xl font-bold">
+							{totalImpressions}
+						</div>
 					</div>
 				</div>
 				<div className="rounded-lg border bg-card text-card-foreground shadow-sm">
@@ -74,7 +96,9 @@ export default function Page() {
 						</svg>
 					</div>
 					<div className="p-6">
-						<div className="text-2xl font-bold">789</div>
+						<div className="text-2xl font-bold">
+							{totalCommentsCount}
+						</div>
 					</div>
 				</div>
 				<div className="rounded-lg border bg-card text-card-foreground shadow-sm">
@@ -99,7 +123,9 @@ export default function Page() {
 						</svg>
 					</div>
 					<div className="p-6">
-						<div className="text-2xl font-bold">99.5</div>
+						<div className="text-2xl font-bold">
+							{Math.floor(totalImpressions / posts.length)}
+						</div>
 					</div>
 				</div>
 			</div>
@@ -115,7 +141,7 @@ export default function Page() {
 					</div>
 					<div className="p-6">
 						<div className="grid gap-2">
-							<button className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+							<button className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium border">
 								Create New Post
 							</button>
 							<div className="relative w-full overflow-auto">
@@ -126,9 +152,6 @@ export default function Page() {
 												Title
 											</th>
 											<th className="h-12 px-4 text-left align-middle font-medium [&amp;:has([role=checkbox])]:pr-0">
-												Status
-											</th>
-											<th className="h-12 px-4 text-left align-middle font-medium [&amp;:has([role=checkbox])]:pr-0">
 												Views
 											</th>
 											<th className="h-12 px-4 text-left align-middle font-medium [&amp;:has([role=checkbox])]:pr-0">
@@ -137,54 +160,17 @@ export default function Page() {
 										</tr>
 									</thead>
 									<tbody className="[&amp;_tr:last-child]:border-0">
-										<tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
-											<td className="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 font-medium">
-												Introduction to React
-											</td>
-											<td className="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">
-												<div
-													className="inline-flex w-fit items-center whitespace-nowrap rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
-													data-v0-t="badge">
-													Draft
-												</div>
-											</td>
-											<td className="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">
-												124
-											</td>
-											<td className="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0"></td>
-										</tr>
-										<tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
-											<td className="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 font-medium">
-												Mastering CSS Grid
-											</td>
-											<td className="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">
-												<div
-													className="inline-flex w-fit items-center whitespace-nowrap rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
-													data-v0-t="badge">
-													Published
-												</div>
-											</td>
-											<td className="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">
-												789
-											</td>
-											<td className="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0"></td>
-										</tr>
-										<tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
-											<td className="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 font-medium">
-												Optimizing Website Performance
-											</td>
-											<td className="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">
-												<div
-													className="inline-flex w-fit items-center whitespace-nowrap rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
-													data-v0-t="badge">
-													Published
-												</div>
-											</td>
-											<td className="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">
-												1,234
-											</td>
-											<td className="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0"></td>
-										</tr>
+										{posts.slice(0, 5).map(post => (
+											<tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+												<td className="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 font-medium">
+													{post.title}
+												</td>
+												<td className="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">
+													{post.impressions}
+												</td>
+												<td className="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0"></td>
+											</tr>
+										))}
 									</tbody>
 								</table>
 							</div>

@@ -1,6 +1,7 @@
 "use server";
 
 import { cookies as initCookies } from "next/headers";
+import hash from "@/app/shared/utils/hasher";
 
 /**
  * @typedef Credentials
@@ -25,20 +26,22 @@ export default async function loginAdmin(formData) {
 	const oneDay = 1000 * 60 * 60 * 24;
 
 	if (password !== adminPassword && username !== adminUsername) {
-		cookies.set("admin_authenticated", "", {
-			secure: true,
-			httpOnly: true,
-			path: "/admin",
-			expires: Date.now() - oneDay
-		});
+		cookies.delete("admin_auth");
+
 		return false;
 	} else {
-		cookies.set("admin_authenticated", true, {
+		const authToken = await hash(
+			process.env.ADMIN_USERNAME,
+			process.env.SIGNING_KEY
+		);
+
+		cookies.set("admin_auth", authToken, {
 			secure: true,
 			httpOnly: true,
 			path: "/admin",
 			expires: Date.now() + oneDay
 		});
+
 		return true;
 	}
 }
