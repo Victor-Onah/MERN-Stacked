@@ -37,7 +37,7 @@ export default function ContactForm() {
 			)}
 			<div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
 				<div className="flex flex-col">
-					<label htmlhtmlFor="name" className="text-sm font-semibold">
+					<label htmlFor="name" className="text-sm font-semibold">
 						Name
 					</label>
 					<input
@@ -49,9 +49,7 @@ export default function ContactForm() {
 					/>
 				</div>
 				<div className="flex flex-col">
-					<label
-						htmlhtmlFor="email"
-						className="text-sm font-semibold">
+					<label htmlFor="email" className="text-sm font-semibold">
 						Email
 					</label>
 					<input
@@ -65,7 +63,7 @@ export default function ContactForm() {
 				</div>
 			</div>
 			<div className="flex flex-col">
-				<label htmlhtmlFor="body" className="text-sm font-semibold">
+				<label htmlFor="body" className="text-sm font-semibold">
 					Message
 				</label>
 				<textarea

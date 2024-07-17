@@ -1,7 +1,7 @@
 import Post from "@/models/post";
-import connectToDb from "@/utils/connect-to-db";
 import { cookies } from "next/headers";
 import formatDateToYYYYMMDD from "./utils/format-date";
+import { connectToDb } from "@/utils/app-db";
 
 /**
  * API endpoint for `/sitemap.xml`

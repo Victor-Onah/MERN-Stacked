@@ -1,7 +1,7 @@
 "use server";
 
-import connectToDb from "../../../utils/connect-to-db";
-import Post from "../../../models/post";
+import { connectToDb } from "@/utils/app-db";
+import Post from "@/models/post";
 
 /**
  * Retrieves the most popular posts on the database by `impressions`

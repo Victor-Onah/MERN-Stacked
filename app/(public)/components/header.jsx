@@ -1,8 +1,8 @@
 import Link from "next/link";
-import Logo from "../../shared/components/logo";
 import Nav from "./nav";
-import Loader from "../../shared/components/loader";
 import { Suspense } from "react";
+import Loader from "@/app/shared/components/loader";
+import Logo from "@/app/shared/components/logo";
 
 /**
  * @typedef {import('react')} React

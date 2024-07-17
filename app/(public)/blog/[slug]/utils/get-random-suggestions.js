@@ -1,7 +1,7 @@
 "use server";
 
 import Post from "@/models/post";
-import connectToDb from "@/utils/connect-to-db";
+import { connectToDb } from "@/utils/app-db";
 
 /**
  * Fetches random posts that will be suggested for readers from the database

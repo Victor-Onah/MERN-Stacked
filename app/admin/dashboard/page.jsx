@@ -1,5 +1,5 @@
 import Post from "@/models/post";
-import connectToDb from "@/utils/connect-to-db";
+import { connectToDb } from "@/utils/app-db";
 import { unstable_noStore as noStore } from "next/cache";
 
 /**
@@ -38,9 +38,9 @@ export default async function Page() {
 							viewBox="0 0 24 24"
 							fill="none"
 							stroke="currentColor"
-							stroke-width="2"
-							stroke-linecap="round"
-							stroke-linejoin="round"
+							strokeWidth="2"
+							strokeLinecap="round"
+							strokeLinejoin="round"
 							className="w-4 h-4">
 							<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
 							<path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
@@ -62,9 +62,9 @@ export default async function Page() {
 							viewBox="0 0 24 24"
 							fill="none"
 							stroke="currentColor"
-							stroke-width="2"
-							stroke-linecap="round"
-							stroke-linejoin="round"
+							strokeWidth="2"
+							strokeLinecap="round"
+							strokeLinejoin="round"
 							className="w-4 h-4">
 							<path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
 							<circle cx="12" cy="12" r="3"></circle>
@@ -88,9 +88,9 @@ export default async function Page() {
 							viewBox="0 0 24 24"
 							fill="none"
 							stroke="currentColor"
-							stroke-width="2"
-							stroke-linecap="round"
-							stroke-linejoin="round"
+							strokeWidth="2"
+							strokeLinecap="round"
+							strokeLinejoin="round"
 							className="w-4 h-4">
 							<path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
 						</svg>
@@ -113,9 +113,9 @@ export default async function Page() {
 							viewBox="0 0 24 24"
 							fill="none"
 							stroke="currentColor"
-							stroke-width="2"
-							stroke-linecap="round"
-							stroke-linejoin="round"
+							strokeWidth="2"
+							strokeLinecap="round"
+							strokeLinejoin="round"
 							className="w-4 h-4">
 							<line x1="18" x2="18" y1="20" y2="10"></line>
 							<line x1="12" x2="12" y1="20" y2="4"></line>
@@ -205,7 +205,7 @@ export default async function Page() {
 										insights.
 									</div>
 									<div className="flex items-center gap-2 text-xs">
-										<time datetime="2023-06-27">
+										<time dateTime="2023-06-27">
 											June 27, 2023
 										</time>
 										<button className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10">
@@ -216,9 +216,9 @@ export default async function Page() {
 												viewBox="0 0 24 24"
 												fill="none"
 												stroke="currentColor"
-												stroke-width="2"
-												stroke-linecap="round"
-												stroke-linejoin="round"
+												strokeWidth="2"
+												strokeLinecap="round"
+												strokeLinejoin="round"
 												className="w-4 h-4">
 												<polyline points="9 17 4 12 9 7"></polyline>
 												<path d="M20 18v-2a4 4 0 0 0-4-4H4"></path>
@@ -245,7 +245,7 @@ export default async function Page() {
 										them out.
 									</div>
 									<div className="flex items-center gap-2 text-xs">
-										<time datetime="2023-06-25">
+										<time dateTime="2023-06-25">
 											June 25, 2023
 										</time>
 										<button className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10">
@@ -256,9 +256,9 @@ export default async function Page() {
 												viewBox="0 0 24 24"
 												fill="none"
 												stroke="currentColor"
-												stroke-width="2"
-												stroke-linecap="round"
-												stroke-linejoin="round"
+												strokeWidth="2"
+												strokeLinecap="round"
+												strokeLinejoin="round"
 												className="w-4 h-4">
 												<polyline points="9 17 4 12 9 7"></polyline>
 												<path d="M20 18v-2a4 4 0 0 0-4-4H4"></path>
@@ -285,7 +285,7 @@ export default async function Page() {
 										sharing!
 									</div>
 									<div className="flex items-center gap-2 text-xs">
-										<time datetime="2023-06-22">
+										<time dateTime="2023-06-22">
 											June 22, 2023
 										</time>
 										<button className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10">
@@ -296,9 +296,9 @@ export default async function Page() {
 												viewBox="0 0 24 24"
 												fill="none"
 												stroke="currentColor"
-												stroke-width="2"
-												stroke-linecap="round"
-												stroke-linejoin="round"
+												strokeWidth="2"
+												strokeLinecap="round"
+												strokeLinejoin="round"
 												className="w-4 h-4">
 												<polyline points="9 17 4 12 9 7"></polyline>
 												<path d="M20 18v-2a4 4 0 0 0-4-4H4"></path>

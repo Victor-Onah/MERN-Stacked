@@ -1,7 +1,7 @@
 import EventEmitter from "events";
-import connectToDb from "./connect-to-db";
 import Post from "@/models/post";
 import Fuse from "fuse.js";
+import { connectToDb } from "./app-db";
 
 class Searcher extends EventEmitter {
 	constructor() {

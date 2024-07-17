@@ -1,5 +1,6 @@
+import { db } from "@/utils/app-db";
 import mongoose from "mongoose";
-import db from "../utils/db.js";
+// import db from "../utils/db.js";
 
 /**
  * Schema for blog posts.

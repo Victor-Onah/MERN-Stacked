@@ -1,8 +1,8 @@
-import Post from "../../../../models/post";
-import connectToDb from "../../../../utils/connect-to-db";
 import markdownToHtml from "./utils/markdown-to-html";
 import CommentSection from "./components/comment-section";
 import PostSuggestions from "./components/post-suggestions";
+import { connectToDb } from "@/utils/app-db";
+import Post from "@/models/post";
 
 /**
  * @typedef {import('next').Metadata} Metadata
@@ -14,6 +14,8 @@ import PostSuggestions from "./components/post-suggestions";
  * @returns {Promise<Metadata>}
  */
 export async function generateMetadata({ params }) {
+	await connectToDb();
+
 	const { slug } = params;
 	const post = await Post.findOne({
 		slug
