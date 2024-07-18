@@ -3,6 +3,8 @@ import CommentSection from "./components/comment-section";
 import PostSuggestions from "./components/post-suggestions";
 import { connectToDb } from "@/utils/app-db";
 import Post from "@/models/post";
+import ShareLinks from "./components/share-links";
+import ShareRequest from "./components/share-request";
 
 /**
  * @typedef {import('next').Metadata} Metadata
@@ -64,6 +66,8 @@ export default async function Page({ params }) {
 				dangerouslySetInnerHTML={{
 					__html: `${await markdownToHtml(post.content)}`
 				}}></div>
+			<ShareRequest slug={slug} title={post.title} />
+			<ShareLinks slug={slug} title={post.title} />
 			<hr />
 			<CommentSection slug={slug} comments={post.comments} />
 			<hr />

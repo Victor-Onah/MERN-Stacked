@@ -65,7 +65,8 @@ main {
 }
 
 #search-modal[open],
-#keywords-modal[open] {
+#keywords-modal[open],
+#share-request-dialog[open] {
 	opacity: 1;
 	transform: translateY(0);
 	transition: 0.3s linear all;
@@ -88,7 +89,8 @@ main {
 	}
 
 	#search-modal[open],
-	#keywords-modal[open] {
+	#keywords-modal[open],
+	#share-request-dialog[open] {
 		opacity: 0;
 		transform: translateY(50px);
 	}
