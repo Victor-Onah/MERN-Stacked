@@ -14,7 +14,7 @@ export default async function BlogPosts() {
 	noStore();
 
 	try {
-		const recentPosts = await getRecentPosts(24);
+		const recentPosts = await getRecentPosts(50);
 
 		return recentPosts.length > 0 ? (
 			<div className="mx-auto grid max-w-5xl grid-cols-1 gap-12 py-12 sm:grid-cols-2 lg:grid-cols-3">
