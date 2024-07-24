@@ -52,7 +52,7 @@ export default function ShareRequest({ slug, title }) {
 				id="share-request-dialog"
 				role="dialog"
 				aria-modal="true"
-				className="fixed inset-0 bg-white w-full max-w-[380px] rounded-lg max-h-[90vh] min-h-48 overflow-x-hidden">
+				className="fixed inset-0 bg-white w-full max-w-[380px] rounded-lg max-h-[90vh] max-[420px]:max-w-[95vw] min-h-48 overflow-x-hidden">
 				<div className="bg-white rounded-lg max-h-[90vh] relative overflow-x-hidden">
 					<button
 						onClick={closeRequestModal}
