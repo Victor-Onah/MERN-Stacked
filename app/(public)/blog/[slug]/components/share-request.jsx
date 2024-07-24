@@ -63,7 +63,7 @@ export default function ShareRequest({ slug, title }) {
 					<img
 						src="https://www.dropbox.com/scl/fi/k4ztd3xsiqx9sw61lv2v1/Blog_InstaShare_031220_WP-2.png?rlkey=jlw3v1p2w9aimxo4jaxu9rj06&raw=1"
 						alt="Share this post"
-						className="sticky w-full top-0"
+						className="sticky w-full top-0 block"
 					/>
 					<div className="p-4 space-y-3">
 						<h4 className="flex gap-2 text-3xl font-black">
