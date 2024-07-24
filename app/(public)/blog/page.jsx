@@ -31,9 +31,11 @@ export async function generateMetadata() {
 }
 
 /** Page for `/blog` */
-export default function Page() {
+export default function Page({ searchParams }) {
 	// Stops page from being cached
 	noStore();
+
+	const { page } = searchParams;
 
 	return (
 		<main className="flex-1">
@@ -51,7 +53,7 @@ export default function Page() {
 			</section>
 			<section className="w-full p-4">
 				<Suspense fallback={<BlogPostsOptimisticUi />}>
-					<BlogPosts />
+					<BlogPosts page={Number(page || "1")} />
 				</Suspense>
 			</section>
 		</main>
