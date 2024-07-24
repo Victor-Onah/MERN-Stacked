@@ -22,7 +22,7 @@ export default async function BlogPosts({ page }) {
 		const pagination = generatePagination(
 			page,
 			undefined,
-			totalPosts / THRESHOLD
+			Math.ceil(totalPosts / THRESHOLD)
 		);
 		const recentPosts = await getRecentPosts(
 			THRESHOLD,
