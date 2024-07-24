@@ -8,7 +8,7 @@ import Post from "@/models/post";
  * @param {number} limit Number of posts to retrieve. Defaults to 6
  * @returns {Promise<Array<{} & {_doc: {slug: string, featuredImageUrl: string, title: string, publishDate: number, lastUpdated?: number}}>>}
  */
-export default async function getRecentPosts(limit = 6) {
+export default async function getRecentPosts(limit = 6, skip = 0) {
 	try {
 		await connectToDb();
 
@@ -17,6 +17,7 @@ export default async function getRecentPosts(limit = 6) {
 			.select(
 				"title summary featuredImageUrl publishDate lastUpdated slug"
 			)
+			.skip(skip)
 			.limit(limit);
 	} catch (error) {
 		return [];
