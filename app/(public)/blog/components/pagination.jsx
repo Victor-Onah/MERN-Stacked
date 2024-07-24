@@ -4,7 +4,7 @@ import Link from "next/link";
  * UI for pagination
  * @param {*[]} paginationArray
  */
-export default function ({ paginationArray, currentPage }) {
+export default function Paginatio({ paginationArray, currentPage }) {
 	return (
 		<div className="flex justify-center items-stretch text-sm gap-2">
 			{paginationArray.map((page, index) => {
@@ -14,6 +14,8 @@ export default function ({ paginationArray, currentPage }) {
 					);
 					return (
 						<Link
+							prefetch
+							key={index}
 							href={`/blog?page=${middlePage}`}
 							className="p-3 py-1 inline-flex bg-zinc-100 rounded-lg hover:shadow-lg active:bg-zinc-200">
 							<svg
@@ -36,6 +38,8 @@ export default function ({ paginationArray, currentPage }) {
 					);
 					return (
 						<Link
+							prefetch
+							key={index}
 							href={`/blog?page=${middlePage}`}
 							className="p-3 py-1 inline-flex bg-zinc-100 rounded-lg hover:shadow-lg active:bg-zinc-200">
 							<svg
@@ -50,11 +54,15 @@ export default function ({ paginationArray, currentPage }) {
 					);
 				} else {
 					return page == currentPage ? (
-						<button className="p-3 py-1 inline-flex bg-zinc-700 text-white rounded-lg hover:shadow-lg">
+						<button
+							key={index}
+							className="p-3 py-1 inline-flex bg-zinc-700 text-white rounded-lg hover:shadow-lg">
 							{page}
 						</button>
 					) : (
 						<Link
+							prefetch
+							key={index}
 							href={`/blog?page=${page}`}
 							className="p-3 py-1 inline-flex bg-zinc-100 rounded-lg hover:shadow-lg">
 							{page}
