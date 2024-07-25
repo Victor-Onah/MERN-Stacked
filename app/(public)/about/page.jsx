@@ -17,13 +17,20 @@ export async function generateMetadata() {
 			title: "MERN Stacked | About",
 			description:
 				"Join Onah Victor as he shares his passion for learning, exploring new ideas, and empowering his readers.Through a diverse range of topics, he aims to inspire and educate his community, fostering a love for knowledge and personal growth.",
-			images: ["/images/social-media-banner.png"]
+			images: ["/images/social-media-banner.png"],
+			url: `https://mernstacked.vercel.app/about`,
+			authors: "Onah Victor",
+			siteName: "MERN Stacked"
 		},
 		twitter: {
 			title: "MERN Stacked | About",
 			description:
 				"Join Onah Victor as he shares his passion for learning, exploring new ideas, and empowering his readers.Through a diverse range of topics, he aims to inspire and educate his community, fostering a love for knowledge and personal growth.",
-			images: ["/images/social-media-banner.png"]
+			images: ["/images/social-media-banner.png"],
+			url: `https://mernstacked.vercel.app/about`,
+			creator: "@__allAboutJS",
+			creatorId: "https://x.com/@__allAboutJS",
+			site: `https://mernstacked.vercel.app/about`
 		}
 	};
 }

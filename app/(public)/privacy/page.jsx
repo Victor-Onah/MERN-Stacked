@@ -15,13 +15,20 @@ export async function generateMetadata() {
 			title: "MERN Stacked | Privacy Policy",
 			description:
 				"This policy outlines the types of personal information we may collect and how we use it.",
-			images: ["/images/social-media-banner.png"]
+			images: ["/images/social-media-banner.png"],
+			url: `https://mernstacked.vercel.app/privacy`,
+			authors: "Onah Victor",
+			siteName: "MERN Stacked"
 		},
 		twitter: {
 			title: "MERN Stacked | Privacy Policy",
 			description:
 				"This policy outlines the types of personal information we may collect and how we use it.",
-			images: ["/images/social-media-banner.png"]
+			images: ["/images/social-media-banner.png"],
+			url: `https://mernstacked.vercel.app/privacy`,
+			creator: "@__allAboutJS",
+			creatorId: "https://x.com/@__allAboutJS",
+			site: `https://mernstacked.vercel.app/privacy`
 		}
 	};
 }

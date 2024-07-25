@@ -19,13 +19,23 @@ export async function generateMetadata() {
 			title: "MERN Stacked | Blog",
 			description:
 				"Dive into the latest trends, insights, and best practices across a variety of web development topics based on the MERN stack and more.",
-			images: ["/images/social-media-banner.png"]
+			images: ["/images/social-media-banner.png"],
+			url: `https://mernstacked.vercel.app/blog`,
+			authors: "Onah Victor",
+			siteName: "MERN Stacked"
 		},
 		twitter: {
 			title: "MERN Stacked | Blog",
 			description:
 				"Dive into the latest trends, insights, and best practices across a variety of web development topics based on the MERN stack and more.",
-			images: ["/images/social-media-banner.png"]
+			images: ["/images/social-media-banner.png"],
+			url: `https://mernstacked.vercel.app/blog`,
+			creator: "@__allAboutJS",
+			creatorId: "https://x.com/@__allAboutJS",
+			site: `https://mernstacked.vercel.app/blog`
+		},
+		alternates: {
+			canonical: "https://mernstacked.vercel.app/blog"
 		}
 	};
 }

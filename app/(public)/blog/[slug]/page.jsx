@@ -21,14 +21,8 @@ export async function generateMetadata({ params }) {
 	const { slug } = params;
 	const post = await Post.findOne({
 		slug
-	}).select("title summary featuredImageUrl comments keywords impressions");
-	const { keywords, title, summary, featuredImageUrl, impressions } = post;
-
-	// Update post impressions
-	post.impressions
-		? (post.impressions = impressions + 1)
-		: (post.impressions = 1);
-	post.save();
+	}).select("title summary featuredImageUrl comments keywords");
+	const { keywords, title, summary, featuredImageUrl } = post;
 
 	return {
 		title,
@@ -37,12 +31,19 @@ export async function generateMetadata({ params }) {
 		openGraph: {
 			title,
 			description: summary,
-			images: featuredImageUrl
+			images: [featuredImageUrl],
+			url: `https://mernstacked.vercel.app/blog/${slug}`,
+			authors: "Onah Victor",
+			siteName: "MERN Stacked"
 		},
 		twitter: {
 			title,
 			description: summary,
-			images: featuredImageUrl
+			images: [featuredImageUrl],
+			url: `https://mernstacked.vercel.app/blog/${slug}`,
+			creator: "@__allAboutJS",
+			creatorId: "https://x.com/@__allAboutJS",
+			site: `https://mernstacked.vercel.app/blog/${slug}`
 		}
 	};
 }
