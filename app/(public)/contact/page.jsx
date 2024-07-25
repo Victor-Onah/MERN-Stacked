@@ -17,13 +17,20 @@ export async function generateMetadata() {
 			title: "MERN Stacked | Contact",
 			description:
 				"Have a question or want to work together? Fill out the form below and I'll get back to you as soon as possible.",
-			images: ["/images/social-media-banner.png"]
+			images: ["/images/social-media-banner.png"],
+			url: `https://mernstacked.vercel.app/contact`,
+			authors: "Onah Victor",
+			siteName: "MERN Stacked"
 		},
 		twitter: {
 			title: "MERN Stacked | Contact",
 			description:
 				"Have a question or want to work together? Fill out the form below and I'll get back to you as soon as possible.",
-			images: ["/images/social-media-banner.png"]
+			images: ["/images/social-media-banner.png"],
+			url: `https://mernstacked.vercel.app/contact`,
+			creator: "@__allAboutJS",
+			creatorId: "https://x.com/@__allAboutJS",
+			site: `https://mernstacked.vercel.app/contact`
 		}
 	};
 }

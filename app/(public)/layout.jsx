@@ -19,13 +19,20 @@ export const metadata = {
 		title: "MERN Stacked - Exploring the MERN Stack and more",
 		description:
 			"Buckle up for a head-first dive into the MERN Stack. Join Onah Victor as he shares his knowledge and experiences through insightful articles.",
-		images: ["/images/social-media-banner.png"]
+		images: ["/images/social-media-banner.png"],
+		url: `https://mernstacked.vercel.app/`,
+		authors: "Onah Victor",
+		siteName: "MERN Stacked"
 	},
 	twitter: {
 		title: "MERN Stacked - Exploring the MERN Stack and more",
 		description:
 			"Buckle up for a head-first dive into the MERN Stack. Join Onah Victor as he shares his knowledge and experiences through insightful articles.",
-		images: ["/images/social-media-banner.png"]
+		images: ["/images/social-media-banner.png"],
+		url: `https://mernstacked.vercel.app/`,
+		creator: "@__allAboutJS",
+		creatorId: "https://x.com/@__allAboutJS",
+		site: `https://mernstacked.vercel.app/`
 	},
 	metadataBase: new URL(process.env.METADATA_BASE || "http://localhost:3000")
 };
