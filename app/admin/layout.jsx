@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="en" data-color-mode="light">
 			<body style={{ overflowX: "hidden" }}>
-				<NextTopLoader color="#333" />
+				<NextTopLoader color="#333" showSpinner={false} />
 				<Header />
 				{children}
 			</body>
