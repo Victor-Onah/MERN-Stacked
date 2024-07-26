@@ -2,6 +2,7 @@ import Footer from "./components/footer";
 import Header from "./components/header";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import NextTopLoader from "nextjs-toploader";
 import "../shared/globals.css";
 
 /**
@@ -46,6 +47,7 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
 			<body>
+				<NextTopLoader color="#333" />
 				<Header />
 				{children}
 				<Footer />

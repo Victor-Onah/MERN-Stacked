@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Nav from "./nav";
 import { Suspense } from "react";
-import Loader from "@/app/shared/components/loader";
 import Logo from "@/app/shared/components/logo";
 
 /**
@@ -15,9 +14,6 @@ import Logo from "@/app/shared/components/logo";
 export default function Header() {
 	return (
 		<>
-			<Suspense fallback={null}>
-				<Loader />
-			</Suspense>
 			<header className="py-3 px-4 md:px-6 lg:px-8 sticky top-0 w-full backdrop-blur-lg bg-white shadow-sm z-50 overflow-x-hidden">
 				<div className="justify-between max-w-screen-xl m-auto flex items-center">
 					<Link
