@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-export default function Error() {
+export default function Error({ reset }) {
 	return (
 		<div className="min-h-screen relative bg-gradient-to-b from-zinc-100 to-white text-center p-4 flex flex-col justify-center items-center gap-2">
 			<div className="absolute aspect-square rounded-full bg-zinc-700 bg-opacity-[0.05] z-[0] backdrop-blur-lg h-12 top-[10%] left-[4%]"></div>
@@ -25,8 +25,8 @@ export default function Error() {
 				<Link
 					className="text-blue-600 hover:underline"
 					href={"#"}
-					onClick={() => window.location.reload()}>
-					Refresh page
+					onClick={() => reset()}>
+					Try again
 				</Link>{" "}
 				or go{" "}
 				<Link className="text-blue-600 hover:underline" href={"/"}>
